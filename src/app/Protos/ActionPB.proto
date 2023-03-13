@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "ActionPB.Protos";
+
+package ActionPB;
+
+message ActionObject{
+	string ActionCode = 1;
+	string Geo = 2;
+	string Description = 3;
+	string unit = 4;
+}
+message StatusReply{
+	string Status = 1;
+}
+
+service ActionServiceProto{
+	rpc AddToActionList
+}

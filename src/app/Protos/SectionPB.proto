@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option csharp_namespace = "SectionPB.Protos";
+
+package SectionPB;
+
+service SectionPBService{
+rpc GetAllSections (StatusRepley) returns (SectionList);
+rpc GetSpecificSection (StatusRepley) returns (SectionObject);
+rpc GetSectionListFromCaseNumber (StatusRepley) returns (SectionList);
+
+}
+
+//A standard object as seen in Database table "EDW_SAG"
+message SectionObject{
+	int32 lateralID = 1;
+	int32 caseID = 2;
+	string from = 3;
+	string to = 4;
+	string status = 5;
+	int32 dimension = 6;
+	int32 length = 7;
+	string material = 8;
+	string type = 9;
+	int32 lateral = 10;
+	int32 fi = 11;
+	int32 damage = 12;
+	int32 priority = 13;
+	int32 rehab = 14;
+	string sectionType = 15;
+	string system = 16;
+	string position = 17;
+	string description = 18;
+	string date = 19;
+	string reportNumber = 20;
+	string bst = 21;
+	string address = 22;
+	string direction = 23;
+	string cleaned = 24;
+	string weather = 25;
+	string inuse = 26;
+	string operator = 27;
+	int32 carNumber = 28;
+	string caseNumber = 29;
+	string inspectionMethod = 30;
+	string mediaID = 31;
+	string fromType = 32;
+	string toType = 33;
+	string inspectionReason = 34;
+	string systemDocumentation = 35;
+	string systemMedia = 36;
+	string physicalIndex = 37;
+	int32 amountOfPlugs = 38;
+	string except = 39;
+	string manholeLateral = 40;
+	string prework = 41;
+	string milled = 42;
+	int32 lateralTypeID = 43;
+	int32 renovationStatusID = 44;
+
+
+
+
+}
+message SectionList {
+  repeated SectionObject sections = 1;
+}
+
+message StatusRepley{
+	string status = 1;
+	int32 command = 2;
+}
+
+
+
+//protoc --plugin=protoc-gen-ts="C:\Users\ama.HARTVIG\source\repos\Sereso\Sereso-Frontend\Sereso-Frontend\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:src\app\generated" --ts_out="service=grpc-web:src/app/generated" src\app\Protos\SectionPB.proto
+

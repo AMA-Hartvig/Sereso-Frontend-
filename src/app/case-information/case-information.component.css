@@ -1,0 +1,64 @@
+.horizontal-mat-list-item {
+  float: right;
+  display: list-item;
+  }
+.title
+{
+  align-items: start;
+}
+.full{
+  height: 80%;
+}
+
+.example-spacer {
+  flex: 1 2 auto;
+}
+
+div {
+  overflow: inherit;
+}
+
+
+.mat-sidenav-container{
+background-color: transparent;
+min-height: 100vh !important;
+
+
+
+;
+}
+
+.CaseEntities{
+min-width: 50px;
+}
+
+a{
+  text-decoration: none;
+  font-size: 110%;
+  white-space: normal;
+}
+
+.sidenav-container {
+/*   height: 1vh; */
+}
+
+.sidenav {
+/*   width: 220px; */
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+ /*  top: 0; */
+}
+
+.mat-toolbar {
+  height: 50px;
+  font-size:16px;
+}
+
+
+.removeTopPadding {
+  padding-top: 0px;
+}
+
+

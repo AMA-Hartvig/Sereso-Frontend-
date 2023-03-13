@@ -1,0 +1,125 @@
+
+
+syntax = "proto3";
+
+option csharp_namespace = "CasePB.Protos";
+
+
+package CasePB;
+
+service CasePBService{
+rpc GetAllCases (StatusRepley) returns (CaseList);
+rpc GetFrontPageObjects (StatusRepley) returns (FrontpageList);
+
+}
+
+//A standard object as seen in Database table "EDW_SAG"
+message CaseObject{
+	int32 caseID = 1;
+	int32 caseNumber = 2;
+	string caseName = 3;
+	string description = 4;
+	int32 priceYear = 5;
+	string creationDate = 6;
+	int32 caseTypeID = 7;
+	int32 amount = 8;
+	int32 caseUnitID = 9;
+	int32 floor = 10;
+	int32 caseSystemID = 11;
+	int32 year = 12;
+	string caseDescription = 13;
+	string caseImagePath = 14;
+	string caseMoviePath = 15;
+	string caseImportPath = 16;
+	string casePDFPath = 17;
+	string wellNumber_Lang = 18;
+	string wellNumber_Bips = 19;
+	int32 userID = 20;
+	int32 propertyBBR = 21;
+	string propertyName = 22;
+	int32 propertyAge = 23;
+	int32 propertyTypeID = 24;
+	int32 propertyApplicationID = 25;
+	string propertyAddress = 26;
+	int32 propertyPostalNumber = 27;
+	string propertyCity = 28;
+	string propertyCadastreNumber = 29;
+	string propertyOwnerLow = 30;
+	int32 caseLanguage = 31;
+	int32 standardRenovationCaseID = 32;
+	int32 entrepreneurID = 33;
+	int32 districtID = 34;
+}
+message CaseList {
+  repeated CaseObject cases = 1;
+}
+// A combined object as seen on the frontpage --
+//clientName = EDW_BRUGER.Kundenavn
+//clientType = EDW_Sagtype.SagTypeNavn
+//importType = EDW_ImportType.ImporttypeNavn
+message FrontPageObject{
+	int32 caseNumber = 1;
+	string caseName = 2;
+	string clientName = 3;
+	string description = 4;
+	string clientType = 5;
+	string importType = 6;
+	int32 sections = 7;
+	int32 laterals = 8;
+	int32 manholes = 9;
+	int32 groups = 10;
+	int32 sectionsPercentage = 11;
+	int32 lateralsPercentage = 12;
+	int32 manholesPercentage = 13;
+	int32 total = 14;
+  int32 caseID = 15;
+}
+message FrontpageList{
+	repeated FrontPageObject fpObjects = 1;
+}
+
+
+//EDW_SAGENHED
+message CaseUnitObject{
+	int32 caseUnitID = 1;
+	string caseUnitName = 2;
+}
+// EDW_BRUGER
+message UserObject{
+	int32 userID = 1;
+	string userLogin = 2;
+	string userName = 3;
+}
+//EDW_EJENDOM_ANVENDELSE
+message PropertyUsabilityObject{
+	int32 propertyUsabilityID = 1;
+	string propertyUsabilityName = 2;
+}
+// EDW_SAGSYSTEM
+message CaseSystemObject{
+	int32 caseSystemID = 1;
+	string caseSystemName = 2;
+}
+message PropertyTypeObject{
+	int32 propertyTypeID = 1;
+	string propertyTypeName = 2;
+}
+//EDW_RENOVERING_TILLÆG
+message RenovationAppendixObject{
+	int32 renovationAppendixID = 1;
+	string renovationAppendixPrice = 2;
+	string manuel = 3;
+	int64 amount = 4;
+}
+
+
+message StatusRepley{
+	string status = 1;
+	int32 command = 2;
+}
+/*------End of respons Objects------*/
+
+/*------Start of message lists------*/
+
+
+//protoc --plugin=protoc-gen-ts="C:\Users\ama.HARTVIG\source\repos\Sereso\Sereso-Frontend\Sereso-Frontend\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:src\app\generated" --ts_out="service=grpc-web:src/app/generated" src\app\Protos\CasePB.proto
