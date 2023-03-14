@@ -41,7 +41,6 @@ export class CaseShowCaseComponent implements OnInit ,AfterViewInit {
 
 
   constructor(private caseService: CaseService, private spinner: LoadingService, private route: Router) {
-
     //Get all cases through service.
 /*     this.spinner.StartLoading();
 
@@ -103,6 +102,8 @@ export class CaseShowCaseComponent implements OnInit ,AfterViewInit {
    */
 
   GetCaseDetails(item:FrontPageObject) {
+    console.log(item);
+    this.caseService.numberTest$.next(item.getCasenumber())
     this.caseService.SelectedFrontPageObject$.next(item);
     this.route.navigateByUrl('case-details');
   };

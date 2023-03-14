@@ -41,9 +41,6 @@
 
 
 
-
-//aaaaaaaadddassssssssadadad
-
 <mat-card style="border: 1px solid black;">
 
   <table mat-table #sectionMatTable [dataSource]="sectionDatasource" style="min-width: 100% !important;" matSort
@@ -53,7 +50,7 @@
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>From</th>
     <td mat-cell *matCellDef="let element"
      matTooltipClass="tooltipStyling"
-    matTooltip="{{frontCaseObject.getCasenumber()}}">{{frontCaseObject.getCasenumber()}}</td>
+    matTooltip="{{element.getFrom()}}">{{element.getFrom()}}</td>
   </ng-container>
   <ng-container matColumnDef="To">
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>To</th>
@@ -126,7 +123,7 @@
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Section Type</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getSectionType()}}">{{element.getSectionType()}}</td>
+  matTooltip="{{element.getSectiontype()}}">{{element.getSectiontype()}}</td>
 </ng-container>
 
 

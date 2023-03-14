@@ -61,9 +61,11 @@ export class SectionService {
     });
   }
 
-  public GetSectionListFromCaseNumber(status :StatusRepley) {
+  public GetSectionListFromCaseNumber(status :number) {
 
-    let requst = status;
+    let requst = new StatusRepley();
+    requst.setCommand(status);
+    console.log(status)
     grpc.invoke(SectionPBService.GetSectionListFromCaseNumber, {
       request: requst,
       host: this.hostAddress,

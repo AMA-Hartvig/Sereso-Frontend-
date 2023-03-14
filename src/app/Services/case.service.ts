@@ -24,6 +24,7 @@ export class CaseService {
   GetFrontPageObjects$ = new BehaviorSubject<FrontpageList>(new FrontpageList());
   SelectedFrontPageObject$ = new BehaviorSubject<FrontPageObject>(new FrontPageObject());
   SelecetedCase$ = new BehaviorSubject<CaseObject>(new CaseObject());
+  numberTest$ = new BehaviorSubject<number>(0);
 
   constructor(private httpclient: HttpClient, private spinner: LoadingService) { }
 

@@ -170,7 +170,8 @@ class="mat-elevation-z8 mat-table">
 
 <tr mat-header-row *matHeaderRowDef="displayedColumnsForFrontPageCase"></tr>
 <tr mat-row style="text-align: match-parrent !important;" *matRowDef="let row; columns: displayedColumnsForFrontPageCase;"
-(click)='GetCaseDetails(row)'></tr>
+
+></tr>
 <mat-paginator #paginator showFirstLastButtons aria-label="antal at vise" [pageSizeOptions]="[100,500]">
 </mat-paginator>
 </table>

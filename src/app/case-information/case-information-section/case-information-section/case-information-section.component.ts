@@ -5,6 +5,7 @@ import { CaseService } from 'src/app/Services/case.service';
 import { FrontPageObject } from '../../../generated/CasePB/CasePB_pb';
 import { SectionService } from 'src/app/Services/section.service';
 import { StatusRepley, SectionList, SectionObject } from 'src/app/generated/Sections/SectionPB_pb';
+import { CDK_ROW_TEMPLATE } from '@angular/cdk/table';
 
 
 @Component({
@@ -15,9 +16,11 @@ import { StatusRepley, SectionList, SectionObject } from 'src/app/generated/Sect
 export class CaseInformationSectionComponent implements OnInit {
   displayedColumnsForCaseDetails = ['From', 'To', 'Status', 'DIM', 'Length', 'Material', 'Type', 'Lat', 'FI' , 'DAM', 'Priority', 'Section Type'];
 
-  @Input() frontCaseObject!: FrontPageObject;
+  @Input() frontCaseObject = this.caseService.SelectedFrontPageObject$.value;
   sectionObject!: SectionObject;
-  sectionDatasource = new MatTableDataSource<SectionList>();
+  sectionList!: SectionList;
+  sectionDatasource = new MatTableDataSource<SectionObject>(new Array<SectionObject>());
+
 
 
 
@@ -31,23 +34,22 @@ export class CaseInformationSectionComponent implements OnInit {
 
   constructor(private caseService:CaseService, private sectionService:SectionService) {
 
-    this.subscription.push(this.caseService.SelectedFrontPageObject$.subscribe(x => {
-      this.frontCaseObject = x;
-      console.log(x.getCaseid);
-      this.caseDetailsDatasource.data.push(this.frontCaseObject);
-
-    }))
-
-        this.caseID = this.frontCaseObject.getCaseid();
-
-
-
+    this.caseService.numberTest$.subscribe(x => {
+      if(x!= 0){
+        this.sectionService.GetSectionListFromCaseNumber(x)
+        console.log(x);
+        this.caseDetailsDatasource.data.push(this.frontCaseObject);
+      }
+    })
          this.statusRepley.setCommand(this.caseID)
-         this.sectionService.GetSectionListFromCaseNumber(this.statusRepley)
-          this.subscription.push(this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
-           this.caseResultSet = y.getSectionsList();
 
-           this.sectionDatasource.data.push(y);
+          this.subscription.push(this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
+           /* this.caseResultSet = y.getSectionsList(); */
+           if(this.frontCaseObject.getCasenumber() != 0){
+           }
+           this.sectionList = y;
+
+           this.sectionDatasource.data = y.getSectionsList();
           }))
    }
 
