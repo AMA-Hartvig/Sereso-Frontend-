@@ -19,8 +19,8 @@ export class SectionObject extends jspb.Message {
   getStatus(): string;
   setStatus(value: string): void;
 
-  getDimension(): number;
-  setDimension(value: number): void;
+  getDimension(): string;
+  setDimension(value: string): void;
 
   getLength(): number;
   setLength(value: number): void;
@@ -34,8 +34,8 @@ export class SectionObject extends jspb.Message {
   getLateral(): number;
   setLateral(value: number): void;
 
-  getFi(): number;
-  setFi(value: number): void;
+  getFi(): string;
+  setFi(value: string): void;
 
   getDamage(): number;
   setDamage(value: number): void;
@@ -85,8 +85,8 @@ export class SectionObject extends jspb.Message {
   getOperator(): string;
   setOperator(value: string): void;
 
-  getCarnumber(): number;
-  setCarnumber(value: number): void;
+  getCarnumber(): string;
+  setCarnumber(value: string): void;
 
   getCasenumber(): string;
   setCasenumber(value: string): void;
@@ -112,11 +112,11 @@ export class SectionObject extends jspb.Message {
   getSystemmedia(): string;
   setSystemmedia(value: string): void;
 
-  getPhysicalindex(): string;
-  setPhysicalindex(value: string): void;
+  getPhysicalindex(): number;
+  setPhysicalindex(value: number): void;
 
-  getAmountofplugs(): number;
-  setAmountofplugs(value: number): void;
+  getAmountofplugs(): string;
+  setAmountofplugs(value: string): void;
 
   getExcept(): string;
   setExcept(value: string): void;
@@ -153,12 +153,12 @@ export namespace SectionObject {
     from: string,
     to: string,
     status: string,
-    dimension: number,
+    dimension: string,
     length: number,
     material: string,
     type: string,
     lateral: number,
-    fi: number,
+    fi: string,
     damage: number,
     priority: number,
     rehab: number,
@@ -175,7 +175,7 @@ export namespace SectionObject {
     weather: string,
     inuse: string,
     operator: string,
-    carnumber: number,
+    carnumber: string,
     casenumber: string,
     inspectionmethod: string,
     mediaid: string,
@@ -184,8 +184,8 @@ export namespace SectionObject {
     inspectionreason: string,
     systemdocumentation: string,
     systemmedia: string,
-    physicalindex: string,
-    amountofplugs: number,
+    physicalindex: number,
+    amountofplugs: string,
     except: string,
     manholelateral: string,
     prework: string,

@@ -17,7 +17,9 @@ export class CaseInformationSectionComponent implements OnInit {
 
   @Input() frontCaseObject!: FrontPageObject;
   sectionObject!: SectionObject;
-  sectionDatasource = new MatTableDataSource<SectionObject>();
+  sectionDatasource = new MatTableDataSource<SectionList>();
+
+
 
   caseID!: number;
   statusRepley = new StatusRepley;
@@ -44,11 +46,8 @@ export class CaseInformationSectionComponent implements OnInit {
          this.sectionService.GetSectionListFromCaseNumber(this.statusRepley)
           this.subscription.push(this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
            this.caseResultSet = y.getSectionsList();
-           this.caseResultSet.forEach(element => {
-           this.sectionDatasource.data.push(element)
-           console.log(element.getFrom)
 
-           });
+           this.sectionDatasource.data.push(y);
           }))
    }
 

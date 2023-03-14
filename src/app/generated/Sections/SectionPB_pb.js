@@ -118,13 +118,13 @@ proto.SectionPB.SectionObject.toObject = function(includeInstance, msg) {
     from: jspb.Message.getFieldWithDefault(msg, 3, ""),
     to: jspb.Message.getFieldWithDefault(msg, 4, ""),
     status: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dimension: jspb.Message.getFieldWithDefault(msg, 6, 0),
-    length: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    dimension: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    length: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
     material: jspb.Message.getFieldWithDefault(msg, 8, ""),
     type: jspb.Message.getFieldWithDefault(msg, 9, ""),
     lateral: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    fi: jspb.Message.getFieldWithDefault(msg, 11, 0),
-    damage: jspb.Message.getFieldWithDefault(msg, 12, 0),
+    fi: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    damage: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
     priority: jspb.Message.getFieldWithDefault(msg, 13, 0),
     rehab: jspb.Message.getFieldWithDefault(msg, 14, 0),
     sectiontype: jspb.Message.getFieldWithDefault(msg, 15, ""),
@@ -140,7 +140,7 @@ proto.SectionPB.SectionObject.toObject = function(includeInstance, msg) {
     weather: jspb.Message.getFieldWithDefault(msg, 25, ""),
     inuse: jspb.Message.getFieldWithDefault(msg, 26, ""),
     operator: jspb.Message.getFieldWithDefault(msg, 27, ""),
-    carnumber: jspb.Message.getFieldWithDefault(msg, 28, 0),
+    carnumber: jspb.Message.getFieldWithDefault(msg, 28, ""),
     casenumber: jspb.Message.getFieldWithDefault(msg, 29, ""),
     inspectionmethod: jspb.Message.getFieldWithDefault(msg, 30, ""),
     mediaid: jspb.Message.getFieldWithDefault(msg, 31, ""),
@@ -149,8 +149,8 @@ proto.SectionPB.SectionObject.toObject = function(includeInstance, msg) {
     inspectionreason: jspb.Message.getFieldWithDefault(msg, 34, ""),
     systemdocumentation: jspb.Message.getFieldWithDefault(msg, 35, ""),
     systemmedia: jspb.Message.getFieldWithDefault(msg, 36, ""),
-    physicalindex: jspb.Message.getFieldWithDefault(msg, 37, ""),
-    amountofplugs: jspb.Message.getFieldWithDefault(msg, 38, 0),
+    physicalindex: jspb.Message.getFloatingPointFieldWithDefault(msg, 37, 0.0),
+    amountofplugs: jspb.Message.getFieldWithDefault(msg, 38, ""),
     except: jspb.Message.getFieldWithDefault(msg, 39, ""),
     manholelateral: jspb.Message.getFieldWithDefault(msg, 40, ""),
     prework: jspb.Message.getFieldWithDefault(msg, 41, ""),
@@ -214,11 +214,11 @@ proto.SectionPB.SectionObject.deserializeBinaryFromReader = function(msg, reader
       msg.setStatus(value);
       break;
     case 6:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setDimension(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setLength(value);
       break;
     case 8:
@@ -234,11 +234,11 @@ proto.SectionPB.SectionObject.deserializeBinaryFromReader = function(msg, reader
       msg.setLateral(value);
       break;
     case 11:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setFi(value);
       break;
     case 12:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setDamage(value);
       break;
     case 13:
@@ -302,7 +302,7 @@ proto.SectionPB.SectionObject.deserializeBinaryFromReader = function(msg, reader
       msg.setOperator(value);
       break;
     case 28:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setCarnumber(value);
       break;
     case 29:
@@ -338,11 +338,11 @@ proto.SectionPB.SectionObject.deserializeBinaryFromReader = function(msg, reader
       msg.setSystemmedia(value);
       break;
     case 37:
-      var value = /** @type {string} */ (reader.readString());
+      var value = /** @type {number} */ (reader.readFloat());
       msg.setPhysicalindex(value);
       break;
     case 38:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = /** @type {string} */ (reader.readString());
       msg.setAmountofplugs(value);
       break;
     case 39:
@@ -434,15 +434,15 @@ proto.SectionPB.SectionObject.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getDimension();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       6,
       f
     );
   }
   f = message.getLength();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       7,
       f
     );
@@ -469,15 +469,15 @@ proto.SectionPB.SectionObject.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getFi();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       11,
       f
     );
   }
   f = message.getDamage();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f !== 0.0) {
+    writer.writeFloat(
       12,
       f
     );
@@ -588,8 +588,8 @@ proto.SectionPB.SectionObject.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getCarnumber();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       28,
       f
     );
@@ -651,15 +651,15 @@ proto.SectionPB.SectionObject.serializeBinaryToWriter = function(message, writer
     );
   }
   f = message.getPhysicalindex();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f !== 0.0) {
+    writer.writeFloat(
       37,
       f
     );
   }
   f = message.getAmountofplugs();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f.length > 0) {
+    writer.writeString(
       38,
       f
     );
@@ -800,29 +800,29 @@ proto.SectionPB.SectionObject.prototype.setStatus = function(value) {
 
 
 /**
- * optional int32 dimension = 6;
- * @return {number}
+ * optional string dimension = 6;
+ * @return {string}
  */
 proto.SectionPB.SectionObject.prototype.getDimension = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 6, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.SectionPB.SectionObject} returns this
  */
 proto.SectionPB.SectionObject.prototype.setDimension = function(value) {
-  return jspb.Message.setProto3IntField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional int32 length = 7;
+ * optional float length = 7;
  * @return {number}
  */
 proto.SectionPB.SectionObject.prototype.getLength = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
 };
 
 
@@ -831,7 +831,7 @@ proto.SectionPB.SectionObject.prototype.getLength = function() {
  * @return {!proto.SectionPB.SectionObject} returns this
  */
 proto.SectionPB.SectionObject.prototype.setLength = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+  return jspb.Message.setProto3FloatField(this, 7, value);
 };
 
 
@@ -890,29 +890,29 @@ proto.SectionPB.SectionObject.prototype.setLateral = function(value) {
 
 
 /**
- * optional int32 fi = 11;
- * @return {number}
+ * optional string fi = 11;
+ * @return {string}
  */
 proto.SectionPB.SectionObject.prototype.getFi = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.SectionPB.SectionObject} returns this
  */
 proto.SectionPB.SectionObject.prototype.setFi = function(value) {
-  return jspb.Message.setProto3IntField(this, 11, value);
+  return jspb.Message.setProto3StringField(this, 11, value);
 };
 
 
 /**
- * optional int32 damage = 12;
+ * optional float damage = 12;
  * @return {number}
  */
 proto.SectionPB.SectionObject.prototype.getDamage = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 12, 0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
 };
 
 
@@ -921,7 +921,7 @@ proto.SectionPB.SectionObject.prototype.getDamage = function() {
  * @return {!proto.SectionPB.SectionObject} returns this
  */
 proto.SectionPB.SectionObject.prototype.setDamage = function(value) {
-  return jspb.Message.setProto3IntField(this, 12, value);
+  return jspb.Message.setProto3FloatField(this, 12, value);
 };
 
 
@@ -1196,20 +1196,20 @@ proto.SectionPB.SectionObject.prototype.setOperator = function(value) {
 
 
 /**
- * optional int32 carNumber = 28;
- * @return {number}
+ * optional string carNumber = 28;
+ * @return {string}
  */
 proto.SectionPB.SectionObject.prototype.getCarnumber = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 28, 0));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
 };
 
 
 /**
- * @param {number} value
+ * @param {string} value
  * @return {!proto.SectionPB.SectionObject} returns this
  */
 proto.SectionPB.SectionObject.prototype.setCarnumber = function(value) {
-  return jspb.Message.setProto3IntField(this, 28, value);
+  return jspb.Message.setProto3StringField(this, 28, value);
 };
 
 
@@ -1358,29 +1358,11 @@ proto.SectionPB.SectionObject.prototype.setSystemmedia = function(value) {
 
 
 /**
- * optional string physicalIndex = 37;
- * @return {string}
- */
-proto.SectionPB.SectionObject.prototype.getPhysicalindex = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.SectionPB.SectionObject} returns this
- */
-proto.SectionPB.SectionObject.prototype.setPhysicalindex = function(value) {
-  return jspb.Message.setProto3StringField(this, 37, value);
-};
-
-
-/**
- * optional int32 amountOfPlugs = 38;
+ * optional float physicalIndex = 37;
  * @return {number}
  */
-proto.SectionPB.SectionObject.prototype.getAmountofplugs = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 38, 0));
+proto.SectionPB.SectionObject.prototype.getPhysicalindex = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 37, 0.0));
 };
 
 
@@ -1388,8 +1370,26 @@ proto.SectionPB.SectionObject.prototype.getAmountofplugs = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionObject} returns this
  */
+proto.SectionPB.SectionObject.prototype.setPhysicalindex = function(value) {
+  return jspb.Message.setProto3FloatField(this, 37, value);
+};
+
+
+/**
+ * optional string amountOfPlugs = 38;
+ * @return {string}
+ */
+proto.SectionPB.SectionObject.prototype.getAmountofplugs = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 38, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionObject} returns this
+ */
 proto.SectionPB.SectionObject.prototype.setAmountofplugs = function(value) {
-  return jspb.Message.setProto3IntField(this, 38, value);
+  return jspb.Message.setProto3StringField(this, 38, value);
 };
 
 
