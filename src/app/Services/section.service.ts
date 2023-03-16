@@ -71,9 +71,13 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionList) => {
         this.GetSectionListFromCaseNumber$.next(Message);
+
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-/*         console.log("Got Data" + Message); */
+        Message.getSectionsList().forEach(element => {
+          console.log(element.toString());
+        });
+        console.log("Got Data" + Message.getSectionsList());
       },
       onEnd: (res) => {
 

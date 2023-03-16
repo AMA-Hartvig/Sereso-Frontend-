@@ -62,8 +62,8 @@ message FrontPageObject{
 	string caseName = 2;
 	string clientName = 3;
 	string description = 4;
-	string clientType = 5;
-	string importType = 6;
+	int32 caseImportId = 5;
+	string clientType = 6;
 	int32 sections = 7;
 	int32 laterals = 8;
 	int32 manholes = 9;

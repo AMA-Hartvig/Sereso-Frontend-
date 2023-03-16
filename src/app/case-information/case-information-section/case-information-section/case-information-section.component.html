@@ -49,6 +49,7 @@
   <ng-container matColumnDef="From">
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>From</th>
     <td mat-cell *matCellDef="let element"
+    (click)="GetCaseDetails(element)"
      matTooltipClass="tooltipStyling"
     matTooltip="{{element.getFrom()}}">{{element.getFrom()}}</td>
   </ng-container>

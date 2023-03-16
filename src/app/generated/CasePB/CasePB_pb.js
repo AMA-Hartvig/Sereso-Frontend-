@@ -1573,8 +1573,8 @@ proto.CasePB.FrontPageObject.toObject = function(includeInstance, msg) {
     casename: jspb.Message.getFieldWithDefault(msg, 2, ""),
     clientname: jspb.Message.getFieldWithDefault(msg, 3, ""),
     description: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    clienttype: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    importtype: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    caseimportid: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    clienttype: jspb.Message.getFieldWithDefault(msg, 6, ""),
     sections: jspb.Message.getFieldWithDefault(msg, 7, 0),
     laterals: jspb.Message.getFieldWithDefault(msg, 8, 0),
     manholes: jspb.Message.getFieldWithDefault(msg, 9, 0),
@@ -1637,12 +1637,12 @@ proto.CasePB.FrontPageObject.deserializeBinaryFromReader = function(msg, reader)
       msg.setDescription(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setClienttype(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setCaseimportid(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setImporttype(value);
+      msg.setClienttype(value);
       break;
     case 7:
       var value = /** @type {number} */ (reader.readInt32());
@@ -1737,14 +1737,14 @@ proto.CasePB.FrontPageObject.serializeBinaryToWriter = function(message, writer)
       f
     );
   }
-  f = message.getClienttype();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getCaseimportid();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getImporttype();
+  f = message.getClienttype();
   if (f.length > 0) {
     writer.writeString(
       6,
@@ -1890,28 +1890,28 @@ proto.CasePB.FrontPageObject.prototype.setDescription = function(value) {
 
 
 /**
- * optional string clientType = 5;
+ * optional int32 caseImportId = 5;
+ * @return {number}
+ */
+proto.CasePB.FrontPageObject.prototype.getCaseimportid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.CasePB.FrontPageObject} returns this
+ */
+proto.CasePB.FrontPageObject.prototype.setCaseimportid = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string clientType = 6;
  * @return {string}
  */
 proto.CasePB.FrontPageObject.prototype.getClienttype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.CasePB.FrontPageObject} returns this
- */
-proto.CasePB.FrontPageObject.prototype.setClienttype = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
-};
-
-
-/**
- * optional string importType = 6;
- * @return {string}
- */
-proto.CasePB.FrontPageObject.prototype.getImporttype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -1920,7 +1920,7 @@ proto.CasePB.FrontPageObject.prototype.getImporttype = function() {
  * @param {string} value
  * @return {!proto.CasePB.FrontPageObject} returns this
  */
-proto.CasePB.FrontPageObject.prototype.setImporttype = function(value) {
+proto.CasePB.FrontPageObject.prototype.setClienttype = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 

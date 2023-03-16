@@ -55,6 +55,7 @@ import { CaseInformationComponent } from './case-information/case-information.co
 import { CaseInformationDetailsComponent } from './case-information/case-information-details/case-information-details/case-information-details.component';
 import { SectionDetailsComponent } from './Section/SectionDetails/section-details/section-details.component';
 import { CaseInformationSectionComponent } from './case-information/case-information-section/case-information-section/case-information-section.component';
+import { CaseInformationSectionDetailsComponent } from './case-information/case-information-section/case-information-section-details/case-information-section-details/case-information-section-details.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { CaseInformationSectionComponent } from './case-information/case-informa
     CaseInformationComponent,
     CaseInformationDetailsComponent,
     SectionDetailsComponent,
-    CaseInformationSectionComponent
+    CaseInformationSectionComponent,
+    CaseInformationSectionDetailsComponent
 
 
   ],

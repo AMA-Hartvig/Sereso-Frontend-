@@ -190,11 +190,11 @@ export class FrontPageObject extends jspb.Message {
   getDescription(): string;
   setDescription(value: string): void;
 
+  getCaseimportid(): number;
+  setCaseimportid(value: number): void;
+
   getClienttype(): string;
   setClienttype(value: string): void;
-
-  getImporttype(): string;
-  setImporttype(value: string): void;
 
   getSections(): number;
   setSections(value: number): void;
@@ -239,8 +239,8 @@ export namespace FrontPageObject {
     casename: string,
     clientname: string,
     description: string,
+    caseimportid: number,
     clienttype: string,
-    importtype: string,
     sections: number,
     laterals: number,
     manholes: number,
