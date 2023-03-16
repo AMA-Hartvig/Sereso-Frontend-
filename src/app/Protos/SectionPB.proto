@@ -57,10 +57,7 @@ message SectionObject{
 	string milled = 42;
 	int32 lateralTypeID = 43;
 	int32 renovationStatusID = 44;
-
-
-
-
+	int32 postion = 45;
 }
 message SectionList {
   repeated SectionObject sections = 1;

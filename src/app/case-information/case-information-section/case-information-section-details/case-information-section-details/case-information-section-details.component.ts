@@ -14,6 +14,8 @@ import { SectionService } from 'src/app/Services/section.service';
 })
 export class CaseInformationSectionDetailsComponent implements OnInit {
 
+  displayedColumnsForCaseSectionDetails = ['MTR', 'Code', 'Observation', 'Endpoint', 'Status', 'Unit', 'Width', 'Material', 'Found' , 'DIM', 'Found2'];
+
   @Input() SectionObject = this.sectionService.GetSpecificSection$.value
 
   sectionDatasource = new MatTableDataSource<SectionObject>();

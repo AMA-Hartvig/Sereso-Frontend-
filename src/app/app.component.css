@@ -1,3 +1,6 @@
+.sectionText{
+  color:hotpink;
+}
 .full{
   height: 80%;
 }
@@ -26,16 +29,10 @@ div {
 background-color: transparent;
 min-height: 99vh !important;
 margin-top: 0px !important;
-
-
 overflow-x: hidden;
 overflow-y: hidden !important;
 outline: 0;
 min-width: 100vh;
-
-
-
-
 }
 
 a{

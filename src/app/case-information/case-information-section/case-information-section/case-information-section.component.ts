@@ -10,7 +10,7 @@ import {
   SectionObject
 } from 'src/app/generated/Sections/SectionPB_pb';
 import { CDK_ROW_TEMPLATE } from '@angular/cdk/table';
-import {  Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-case-information-section',
@@ -36,7 +36,7 @@ export class CaseInformationSectionComponent implements OnInit {
   @Input() frontCaseObject = this.caseService.SelectedFrontPageObject$.value;
   sectionObject?: SectionObject;
   sectionList?: SectionList;
-/*   sectionDatasource = new MatTableDataSource<SectionObject>(
+  /*   sectionDatasource = new MatTableDataSource<SectionObject>(
     new Array<SectionObject>()
   ); */
 
@@ -56,66 +56,31 @@ export class CaseInformationSectionComponent implements OnInit {
     private route: Router
   ) {
     this.caseService.numberTest$.subscribe(x => {
-      console.log("this is the number" + x );
       if (x != 0) {
-
-        /* this.sectionService.GetSectionListFromCaseNumber(this.frontCaseObject.getCaseimportid());
- */        this.sectionService.GetSectionListFromCaseNumber(x);
-
-
-        this.caseDetailsDatasource.data.push(this.frontCaseObject);
+        this.sectionService.GetSectionListFromCaseNumber(
+          this.frontCaseObject.getCaseimportid()
+        );
       }
     });
 
-    this.statusRepley.setCommand(this.caseID);
+    /* this.statusRepley.setCommand(this.caseID); */
 
     this.subscription.push(
       this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
-
         this.sectionResultSet = y.getSectionsList();
 
-/* y.getSectionsList().forEach(element => {
-  this.caseResultSet.push(element)
-
-
-});
-*/
-
-        /* this.caseResultSet = y.getSectionsList(); */
         if (this.frontCaseObject.getCasenumber() != 0) {
-
           this.sectionList = y;
         }
-
-
-    /*     y.getSectionsList().forEach(element => {
-          this.sectionDatasource.data.push(element)
-        }); */
-
-        /* this.sectionDatasource.data.push( this.caseResultSet.pop()) ; */
-
-        this.sectionList?.getSectionsList().forEach(element => {
-          this.sectionObject = element;
-           /*  console.log(element.toString()) */
-          this.sectionDatasource.data.push(this.sectionObject) ;
-        });
-
-
-
-    /*     this.sectionDatasource.data = y.getSectionsList(); */
-        /* y.getSectionsList().forEach(element => {
-          this.sectionDatasource.data.push(element);
-        }); */
+        this.sectionDatasource.data = this.sectionList!.getSectionsList();
       })
     );
   }
 
-  GetCaseDetails(item:SectionObject) {
+  GetCaseDetails(item: SectionObject) {
     this.sectionService.GetSpecificSection$.next(item);
     this.route.navigateByUrl('section-detail');
   }
-
-
 
   ngOnInit(): void {}
 }

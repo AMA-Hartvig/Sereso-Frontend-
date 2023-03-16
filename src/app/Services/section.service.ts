@@ -62,7 +62,7 @@ export class SectionService {
   }
 
   public GetSectionListFromCaseNumber(status :number) {
-
+    this.GetSectionListFromCaseNumber$.next(new SectionList());
     let requst = new StatusRepley();
     requst.setCommand(status);
     console.log(status)
@@ -71,16 +71,12 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionList) => {
         this.GetSectionListFromCaseNumber$.next(Message);
-
+          console.log(Message);
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-        Message.getSectionsList().forEach(element => {
-          console.log(element.toString());
-        });
-        console.log("Got Data" + Message.getSectionsList());
+
       },
       onEnd: (res) => {
-
       },
     });
   }

@@ -41,33 +41,14 @@ export class CaseShowCaseComponent implements OnInit ,AfterViewInit {
 
 
   constructor(private caseService: CaseService, private spinner: LoadingService, private route: Router) {
-    //Get all cases through service.
-/*     this.spinner.StartLoading();
 
-    this.caseService.GetAllCases();
-    this.caseService.GetAllCases$.subscribe(x => {
-      this.caseresultSet = x.getCasesList();
-
-      if(this.caseService.caseResult.length >= 1){
-        this.caseDatasource.data = this.caseService.caseResult;
-
-        this.spinner.stopLoading();
-        return;
-      }
-
-      this.caseDatasource.data = x.getCasesList();
-      this.FilterOptions = new Array<any>();
-      this.spinner.stopLoading();
-    }) */
-
-    //Get all frontpage objects
+//
     this.caseService.GetFrontPageObjects();
     this.caseService.GetFrontPageObjects$.subscribe(x => {
       this.frontresultSet = x.getFpobjectsList();
 
       if(this.caseService.caseResult.length >= 1){
         this.frontDatasource.data = this.caseService.frontResult;
-    /*     console.log(this.frontDatasource.data); */
         this.spinner.stopLoading();
         return;
 
@@ -93,13 +74,6 @@ export class CaseShowCaseComponent implements OnInit ,AfterViewInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.frontDatasource.filter = filterValue.trim().toLowerCase();
   };
-
-/*   GetCaseDetails(item:CaseObject) {
-    this.caseService.SelecetedCase$.next(item);
-
-    this.route.navigateByUrl('case-details')
-  };
-   */
 
   GetCaseDetails(item:FrontPageObject) {
     /* console.log(item); */
