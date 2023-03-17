@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
 import { CaseService } from 'src/app/Services/case.service';
-import { FrontPageObject } from '../../../generated/CasePB/CasePB_pb';
+import { FrontPageObject } from '../../generated/CasePB/CasePB_pb';
 import { SectionService } from 'src/app/Services/section.service';
 import {
   StatusRepley,

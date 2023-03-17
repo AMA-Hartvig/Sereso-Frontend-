@@ -45,29 +45,26 @@ import { MatBadgeModule } from '@angular/material/badge'
 import {HttpClientModule} from '@angular/common/http';
 
 
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProjectHandlerComponent } from './Handlers/project-handler/project-handler.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CaseShowCaseComponent } from './Case/case-show-case/case-show-case.component';
-import { CaseInformationComponent } from './case-information/case-information.component';
-import { CaseInformationDetailsComponent } from './case-information/case-information-details/case-information-details/case-information-details.component';
-import { SectionDetailsComponent } from './Section/SectionDetails/section-details/section-details.component';
-import { CaseInformationSectionComponent } from './case-information/case-information-section/case-information-section/case-information-section.component';
-import { CaseInformationSectionDetailsComponent } from './case-information/case-information-section/case-information-section-details/case-information-section-details/case-information-section-details.component';
+import { CaseInformationComponent } from './Case/CaseInformation/case-information.component';
+import { CaseInformationDetailsComponent } from './Case/case-information-details/case-information-details.component';
+import { CaseInformationSectionComponent } from './Case/case-information-section/case-information-section.component';
+import { CaseInformationSectionDetailsComponent } from './Section/case-information-section-details/case-information-section-details.component';
+import { ActionInformationComponent } from './Action/action-information/action-information.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjectHandlerComponent,
     CaseShowCaseComponent,
     CaseInformationComponent,
     CaseInformationDetailsComponent,
-    SectionDetailsComponent,
     CaseInformationSectionComponent,
-    CaseInformationSectionDetailsComponent
+    CaseInformationSectionDetailsComponent,
+    ActionInformationComponent
 
 
   ],

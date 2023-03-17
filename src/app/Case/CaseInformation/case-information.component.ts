@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import {CaseShowCaseComponent,  } from '../Case/case-show-case/case-show-case.component';
-import { FrontPageObject } from '../generated/CasePB/CasePB_pb';
+import {CaseShowCaseComponent,  } from '../case-show-case/case-show-case.component';
+import { FrontPageObject } from '../../generated/CasePB/CasePB_pb';
 import { Subscription } from 'rxjs';
-import {  CaseService } from '../Services/case.service';
+import {  CaseService } from '../../Services/case.service';
 
 @Component({
   selector: 'app-case-information',
