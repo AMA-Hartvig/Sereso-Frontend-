@@ -55,10 +55,10 @@ export class CaseInformationSectionComponent implements OnInit {
     private sectionService: SectionService,
     private route: Router
   ) {
-/*     this.sectionService.GetSectionListFromCaseNumber$.subscribe(x => {
-      this.sectionList = x;
-      this.sectionDatasource.data = this.sectionList!.getSectionsList();
-    }) */
+    // this.sectionService.GetSectionListFromCaseNumber$.subscribe(x => {
+    //   this.sectionList = x;
+    //   this.sectionDatasource.data = this.sectionList!.getSectionsList();
+    // })
 
     this.caseService.numberTest$.subscribe(x => {
       if (x != 0) {
@@ -82,7 +82,7 @@ export class CaseInformationSectionComponent implements OnInit {
         this.sectionDatasource.data = this.sectionList!.getSectionsList();
       })
     );
-  }
+
 
 
     /* this.statusRepley.setCommand(this.caseID); */
