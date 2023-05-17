@@ -37,6 +37,33 @@ SectionPBService.GetSectionListFromCaseNumber = {
   responseType: src_app_Protos_SectionPB_pb.SectionList
 };
 
+SectionPBService.GetSpecificSectionFront = {
+  methodName: "GetSpecificSectionFront",
+  service: SectionPBService,
+  requestStream: false,
+  responseStream: false,
+  requestType: src_app_Protos_SectionPB_pb.StatusRepley,
+  responseType: src_app_Protos_SectionPB_pb.SectionFrontObject
+};
+
+SectionPBService.GetSectionFrontListFromCaseNumber = {
+  methodName: "GetSectionFrontListFromCaseNumber",
+  service: SectionPBService,
+  requestStream: false,
+  responseStream: false,
+  requestType: src_app_Protos_SectionPB_pb.StatusRepley,
+  responseType: src_app_Protos_SectionPB_pb.SectionFrontList
+};
+
+SectionPBService.GetAllSectionsFront = {
+  methodName: "GetAllSectionsFront",
+  service: SectionPBService,
+  requestStream: false,
+  responseStream: false,
+  requestType: src_app_Protos_SectionPB_pb.StatusRepley,
+  responseType: src_app_Protos_SectionPB_pb.SectionFrontList
+};
+
 exports.SectionPBService = SectionPBService;
 
 function SectionPBServiceClient(serviceHost, options) {
@@ -111,6 +138,99 @@ SectionPBServiceClient.prototype.getSectionListFromCaseNumber = function getSect
     callback = arguments[1];
   }
   var client = grpc.unary(SectionPBService.GetSectionListFromCaseNumber, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SectionPBServiceClient.prototype.getSpecificSectionFront = function getSpecificSectionFront(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SectionPBService.GetSpecificSectionFront, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SectionPBServiceClient.prototype.getSectionFrontListFromCaseNumber = function getSectionFrontListFromCaseNumber(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SectionPBService.GetSectionFrontListFromCaseNumber, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+SectionPBServiceClient.prototype.getAllSectionsFront = function getAllSectionsFront(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(SectionPBService.GetAllSectionsFront, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

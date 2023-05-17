@@ -7,7 +7,7 @@ import { SectionService } from 'src/app/Services/section.service';
 import {
   StatusRepley,
   SectionList,
-  SectionObject
+  SectionObject,
 } from 'src/app/generated/Sections/SectionPB_pb';
 import { CDK_ROW_TEMPLATE } from '@angular/cdk/table';
 import { Router } from '@angular/router';
@@ -33,7 +33,7 @@ export class CaseInformationSectionComponent implements OnInit {
     'Section Type'
   ];
 
-  @Input() frontCaseObject = this.caseService.SelectedFrontPageObject$.value;
+  @Input() CaseNumber = this.caseService.SelectedFrontPageObject$.value;
   sectionObject?: SectionObject;
   sectionList?: SectionList;
   /*   sectionDatasource = new MatTableDataSource<SectionObject>(
@@ -55,26 +55,48 @@ export class CaseInformationSectionComponent implements OnInit {
     private sectionService: SectionService,
     private route: Router
   ) {
+/*     this.sectionService.GetSectionListFromCaseNumber$.subscribe(x => {
+      this.sectionList = x;
+      this.sectionDatasource.data = this.sectionList!.getSectionsList();
+    }) */
+
     this.caseService.numberTest$.subscribe(x => {
       if (x != 0) {
         this.sectionService.GetSectionListFromCaseNumber(
-          this.frontCaseObject.getCaseimportid()
+          this.CaseNumber.getCasenumber()
+
         );
+
+
       }
     });
 
-    /* this.statusRepley.setCommand(this.caseID); */
 
     this.subscription.push(
       this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
         this.sectionResultSet = y.getSectionsList();
 
-        if (this.frontCaseObject.getCasenumber() != 0) {
+        if (this.CaseNumber.getCasenumber() != 0) {
           this.sectionList = y;
         }
         this.sectionDatasource.data = this.sectionList!.getSectionsList();
       })
     );
+  }
+
+
+    /* this.statusRepley.setCommand(this.caseID); */
+/*
+    this.subscription.push(
+      this.sectionService.GetAllSections$.subscribe(y => {
+        this.sectionResultSet = y.getSectionsList();
+
+        if (this.CaseNumber.getCasenumber() != 0) {
+          this.sectionList = y;
+        }
+
+      })
+    ); */
   }
 
   GetCaseDetails(item: SectionObject) {

@@ -9,6 +9,12 @@
 .full{
   height: 80%;
 }
+.aligned-with-icon{
+  position: absolute;
+  margin-top: 5px;
+
+}
+
 
 .example-spacer {
   flex: 1 2 auto;

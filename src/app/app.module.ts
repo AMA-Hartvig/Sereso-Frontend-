@@ -54,6 +54,11 @@ import { CaseInformationDetailsComponent } from './Case/case-information-details
 import { CaseInformationSectionComponent } from './Case/case-information-section/case-information-section.component';
 import { CaseInformationSectionDetailsComponent } from './Section/case-information-section-details/case-information-section-details.component';
 import { ActionInformationComponent } from './Action/action-information/action-information.component';
+import { SectionInformationComponent } from './Section/section-information/section-information.component';
+import { ActionListComponent } from './Action/action-list/action-list.component';
+import { ActionFiltersComponent } from './Action/action-filters/action-filters.component';
+import { ActionAddedComponent } from './Action/action-added/action-added.component';
+import { VisualPresentatorComponent } from './VisualMedia/visual-presentator/visual-presentator.component';
 
 
 @NgModule({
@@ -64,7 +69,12 @@ import { ActionInformationComponent } from './Action/action-information/action-i
     CaseInformationDetailsComponent,
     CaseInformationSectionComponent,
     CaseInformationSectionDetailsComponent,
-    ActionInformationComponent
+    ActionInformationComponent,
+    SectionInformationComponent,
+    ActionListComponent,
+    ActionFiltersComponent,
+    ActionAddedComponent,
+    VisualPresentatorComponent
 
 
   ],

@@ -19,6 +19,13 @@
   float: right;
 }
 
+.aligned-with-icon{
+  position: absolute;
+  margin-top: 5px;
+
+}
+
+
 div {
   overflow: inherit;
 }

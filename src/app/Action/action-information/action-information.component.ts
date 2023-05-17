@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActionInformationComponent implements OnInit {
 
+  displayedColumnsForCaseSectionDetails = ['MTR', 'Code', 'Observation', 'Endpoint', 'Status', 'Unit', 'Width', 'Material', 'Found' , 'DIM', 'Found2'];
+
   constructor() { }
 
   ngOnInit(): void {

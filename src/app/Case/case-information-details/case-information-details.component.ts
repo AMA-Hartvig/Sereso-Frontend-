@@ -7,6 +7,7 @@ import { FrontPageObject } from '../../generated/CasePB/CasePB_pb';
 import { SectionService } from 'src/app/Services/section.service';
 import { StatusRepley, SectionList, SectionObject } from 'src/app/generated/Sections/SectionPB_pb';
 import { Value } from '@ngx-grpc/well-known-types';
+import { CDK_ROW_TEMPLATE } from '@angular/cdk/table';
 
 @Component({
   selector: 'app-case-information-details',
@@ -47,6 +48,8 @@ export class CaseInformationDetailsComponent implements OnInit {
 
 
         this.caseID = this.frontCaseObject.getCaseid();
+
+          console.log(" frontcaseobject" + this.caseID)
 
         this.statusRepley.setCommand(this.caseID)
          sectionService.GetSpecificSection(this.statusRepley)

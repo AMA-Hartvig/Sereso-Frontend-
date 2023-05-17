@@ -18,11 +18,28 @@ export class SectionService {
   GetAllSections$ = new BehaviorSubject<SectionList>(new SectionList());
   GetSpecificSection$ = new BehaviorSubject<SectionObject>(new SectionObject());
   GetSectionListFromCaseNumber$ = new BehaviorSubject<SectionList>(new SectionList());
+  // GetAllSectionsFront$ = new BehaviorSubject<SectionFrontList>(new SectionFrontList());
 
   constructor(private httpclient: HttpClient) {
 
 
   }
+
+  // public GetFrontSections(status :StatusRepley){
+
+  //   let requst = new StatusRepley();
+  //   grpc.invoke(SectionPBService.GetAllSectionsFront, {
+  //     request: requst,
+  //     host: this.hostAddress,
+  //     onMessage: (Message: SectionFrontList) => {
+  //       this.GetAllSectionsFront$.next(Message);
+
+  //     },
+  //     onEnd: (res) => {
+
+  //     },
+  //   });
+  // }
 
   public GetSectionList() {
 
@@ -33,9 +50,6 @@ export class SectionService {
       onMessage: (Message: SectionList) => {
         this.GetAllSections$.next(Message);
 
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-/*         console.log("Got Data" + Message); */
       },
       onEnd: (res) => {
 
@@ -44,7 +58,7 @@ export class SectionService {
   }
 
   public GetSpecificSection(status :StatusRepley) {
-
+    this.GetSpecificSection$.next(new SectionObject());
     let requst = new StatusRepley();
     grpc.invoke(SectionPBService.GetSpecificSection, {
       request: requst,
@@ -53,7 +67,6 @@ export class SectionService {
         this.GetSpecificSection$.next(Message);
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-/*         console.log("Got Data" + Message); */
       },
       onEnd: (res) => {
 
@@ -62,16 +75,14 @@ export class SectionService {
   }
 
   public GetSectionListFromCaseNumber(status :number) {
-    this.GetSectionListFromCaseNumber$.next(new SectionList());
     let requst = new StatusRepley();
     requst.setCommand(status);
-    console.log(status)
     grpc.invoke(SectionPBService.GetSectionListFromCaseNumber, {
       request: requst,
       host: this.hostAddress,
       onMessage: (Message: SectionList) => {
         this.GetSectionListFromCaseNumber$.next(Message);
-          console.log(Message);
+
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
 

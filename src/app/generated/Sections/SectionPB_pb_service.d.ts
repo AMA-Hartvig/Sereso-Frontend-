@@ -31,11 +31,41 @@ type SectionPBServiceGetSectionListFromCaseNumber = {
   readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionList;
 };
 
+type SectionPBServiceGetSpecificSectionFront = {
+  readonly methodName: string;
+  readonly service: typeof SectionPBService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof src_app_Protos_SectionPB_pb.StatusRepley;
+  readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionFrontObject;
+};
+
+type SectionPBServiceGetSectionFrontListFromCaseNumber = {
+  readonly methodName: string;
+  readonly service: typeof SectionPBService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof src_app_Protos_SectionPB_pb.StatusRepley;
+  readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionFrontList;
+};
+
+type SectionPBServiceGetAllSectionsFront = {
+  readonly methodName: string;
+  readonly service: typeof SectionPBService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof src_app_Protos_SectionPB_pb.StatusRepley;
+  readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionFrontList;
+};
+
 export class SectionPBService {
   static readonly serviceName: string;
   static readonly GetAllSections: SectionPBServiceGetAllSections;
   static readonly GetSpecificSection: SectionPBServiceGetSpecificSection;
   static readonly GetSectionListFromCaseNumber: SectionPBServiceGetSectionListFromCaseNumber;
+  static readonly GetSpecificSectionFront: SectionPBServiceGetSpecificSectionFront;
+  static readonly GetSectionFrontListFromCaseNumber: SectionPBServiceGetSectionFrontListFromCaseNumber;
+  static readonly GetAllSectionsFront: SectionPBServiceGetAllSectionsFront;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -96,6 +126,33 @@ export class SectionPBServiceClient {
   getSectionListFromCaseNumber(
     requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
     callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionList|null) => void
+  ): UnaryResponse;
+  getSpecificSectionFront(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontObject|null) => void
+  ): UnaryResponse;
+  getSpecificSectionFront(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontObject|null) => void
+  ): UnaryResponse;
+  getSectionFrontListFromCaseNumber(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontList|null) => void
+  ): UnaryResponse;
+  getSectionFrontListFromCaseNumber(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontList|null) => void
+  ): UnaryResponse;
+  getAllSectionsFront(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontList|null) => void
+  ): UnaryResponse;
+  getAllSectionsFront(
+    requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionFrontList|null) => void
   ): UnaryResponse;
 }
 
