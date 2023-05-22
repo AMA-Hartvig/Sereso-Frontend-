@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -46,6 +47,7 @@ export class CaseInformationSectionComponent implements OnInit {
   statusRepley = new StatusRepley();
 
   sectionResultSet = new Array<SectionObject>();
+  caseResultSet = new Array<SectionObject>();
 
   subscription = new Array<Subscription>();
   caseDetailsDatasource = new MatTableDataSource<FrontPageObject>();
@@ -83,6 +85,16 @@ export class CaseInformationSectionComponent implements OnInit {
       })
     );
 
+/*     this.statusRepley.setCommand(this.caseID)
+    this.sectionService.GetSectionListFromCaseNumber(this.statusRepley.getCommand())
+     this.subscription.push(this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
+      this.caseResultSet = y.getSectionsList();
+      this.caseResultSet.forEach(element => {
+      this.sectionDatasource.data.push(element)
+      console.log(element)
+
+      });
+     })) */
 
 
     /* this.statusRepley.setCommand(this.caseID); */
@@ -106,3 +118,4 @@ export class CaseInformationSectionComponent implements OnInit {
 
   ngOnInit(): void {}
 }
+
