@@ -65,11 +65,11 @@ export class CaseInformationSectionComponent implements OnInit {
     this.caseService.numberTest$.subscribe(x => {
       if (x != 0) {
         this.sectionService.GetSectionListFromCaseNumber(
-          this.CaseNumber.getCasenumber()
+         this.CaseNumber.getCasenumber()
 
         );
 
-
+        // this.caseID = this.CaseNumber.getCasenumber()
       }
     });
 
@@ -79,9 +79,19 @@ export class CaseInformationSectionComponent implements OnInit {
         this.sectionResultSet = y.getSectionsList();
 
         if (this.CaseNumber.getCasenumber() != 0) {
-          this.sectionList = y;
+            this.sectionList = y;
         }
         this.sectionDatasource.data = this.sectionList!.getSectionsList();
+
+        this.caseResultSet.forEach(element => {
+          this.sectionDatasource.data.push(element)
+          console.log(element.getFrom)
+
+          });
+
+
+
+      // = this.sectionList!.getSectionsList();
       })
     );
 

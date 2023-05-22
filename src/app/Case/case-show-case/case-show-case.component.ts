@@ -79,6 +79,8 @@ export class CaseShowCaseComponent implements OnInit ,AfterViewInit {
     /* console.log(item); */
     this.caseService.numberTest$.next(item.getCaseimportid())
     this.caseService.SelectedFrontPageObject$.next(item);
+
+
     this.route.navigateByUrl('case-details');
   };
 }

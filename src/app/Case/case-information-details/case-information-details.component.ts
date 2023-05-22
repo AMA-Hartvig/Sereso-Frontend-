@@ -47,12 +47,15 @@ export class CaseInformationDetailsComponent implements OnInit {
         }) */
 
 
-        this.caseID = this.frontCaseObject.getCaseid();
+        this.caseID = this.frontCaseObject.getCasenumber();
 
           console.log(" frontcaseobject" + this.caseID)
 
         this.statusRepley.setCommand(this.caseID)
-         sectionService.GetSpecificSection(this.statusRepley)
+        sectionService.GetSectionListFromCaseNumber(this.statusRepley.getCommand())
+
+
+        //  sectionService.GetSpecificSection(this.statusRepley)
 
 
 
