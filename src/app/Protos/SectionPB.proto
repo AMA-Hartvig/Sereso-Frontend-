@@ -8,7 +8,6 @@ service SectionPBService{
 rpc GetAllSections (StatusRepley) returns (SectionList);
 rpc GetSpecificSection (StatusRepley) returns (SectionObject);
 rpc GetSectionListFromCaseNumber (StatusRepley) returns (SectionList);
-
 rpc GetSpecificSectionFront (StatusRepley) returns (SectionFrontObject);
 rpc GetSectionFrontListFromCaseNumber (StatusRepley) returns (SectionFrontList);
 rpc GetAllSectionsFront(StatusRepley) returns (SectionFrontList);
@@ -16,13 +15,13 @@ rpc GetAllSectionsFront(StatusRepley) returns (SectionFrontList);
 
 //A intact object as seen in Database table "Section"
 message SectionObject{
-	int32 SectionId = 1;
-	int32 from = 2;
-	int32 to = 3;
-    int32 S_ID = 4;
-	int32 sectionNumber = 5;
-	string TV_Operator = 6;
-    string Inspection_Date = 7;
+	    int32 SectionId = 1;
+	    int32 from = 2;
+	    int32 to = 3;
+        int32 S_ID = 4;
+	    int32 sectionNumber = 5;
+	    string TV_Operator = 6;
+        string Inspection_Date = 7;
       string Inspection_City = 8;
       string Inspection_Address = 9;
       string Inspection_Weather = 10;

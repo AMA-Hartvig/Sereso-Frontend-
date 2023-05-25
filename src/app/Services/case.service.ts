@@ -47,6 +47,24 @@ export class CaseService {
     });
   }
 
+  public SelectedFrontPageObject() {
+    this.spinner.StartLoading();
+    let requst = new StatusRepley();
+    grpc.invoke(CasePBService.SelectedFrontPageObject, {
+      request: requst,
+      host: this.hostAddress,
+      onMessage: (Message: FrontPageObject) => {
+        this.SelectedFrontPageObject$.next(Message);
+        // new BehaviorSubject<CaseObject>(new CaseList());
+        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
+/*         console.log("Got Data" + Message); */
+      },
+      onEnd: (res) => {
+        this.spinner.stopLoading();
+      },
+    });
+  }
+
   public GetFrontPageObjects() {
     this.spinner.StartLoading();
     let requst = new StatusRepley();

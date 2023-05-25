@@ -416,107 +416,155 @@ export namespace SectionFrontObject2 {
 }
 
 export class SectionFrontObject extends jspb.Message {
-  getLateralid(): number;
-  setLateralid(value: number): void;
+  getSectionid(): number;
+  setSectionid(value: number): void;
 
-  getCaseid(): number;
-  setCaseid(value: number): void;
+  getFrom(): number;
+  setFrom(value: number): void;
 
-  getFrom(): string;
-  setFrom(value: string): void;
+  getTo(): number;
+  setTo(value: number): void;
 
-  getTo(): string;
-  setTo(value: string): void;
+  getSId(): number;
+  setSId(value: number): void;
 
-  getStatus(): string;
-  setStatus(value: string): void;
+  getSectionnumber(): number;
+  setSectionnumber(value: number): void;
+
+  getTvOperator(): string;
+  setTvOperator(value: string): void;
+
+  getInspectionDate(): string;
+  setInspectionDate(value: string): void;
+
+  getInspectionCity(): string;
+  setInspectionCity(value: string): void;
+
+  getInspectionAddress(): string;
+  setInspectionAddress(value: string): void;
+
+  getInspectionWeather(): string;
+  setInspectionWeather(value: string): void;
+
+  getInspectionSectionnumber(): number;
+  setInspectionSectionnumber(value: number): void;
 
   getDimension(): string;
   setDimension(value: string): void;
 
-  getLength(): number;
-  setLength(value: number): void;
+  getMateriale(): string;
+  setMateriale(value: string): void;
 
-  getMaterial(): string;
-  setMaterial(value: string): void;
+  getLengthMeter(): number;
+  setLengthMeter(value: number): void;
 
-  getType(): string;
-  setType(value: string): void;
+  getYearofestablishment(): string;
+  setYearofestablishment(value: string): void;
 
-  getLateral(): number;
-  setLateral(value: number): void;
+  getInspektionReportnumber(): string;
+  setInspektionReportnumber(value: string): void;
 
-  getFi(): string;
-  setFi(value: string): void;
+  getReportDescription(): string;
+  setReportDescription(value: string): void;
 
-  getDamage(): number;
-  setDamage(value: number): void;
+  getInspectionReason(): string;
+  setInspectionReason(value: string): void;
 
-  getPriority(): number;
-  setPriority(value: number): void;
+  getInspektionCarnumber(): string;
+  setInspektionCarnumber(value: string): void;
 
-  getRehab(): number;
-  setRehab(value: number): void;
+  getInspektionCamera(): string;
+  setInspektionCamera(value: string): void;
 
-  getSectiontype(): string;
-  setSectiontype(value: string): void;
+  getAssignmentNumber(): number;
+  setAssignmentNumber(value: number): void;
 
-  getSystem(): string;
-  setSystem(value: string): void;
+  getVideonumber(): number;
+  setVideonumber(value: number): void;
 
-  getPosition(): string;
-  setPosition(value: string): void;
+  getInspectionCleaned(): string;
+  setInspectionCleaned(value: string): void;
 
-  getDescription(): string;
-  setDescription(value: string): void;
+  getTopointtype(): string;
+  setTopointtype(value: string): void;
 
-  getDate(): string;
-  setDate(value: string): void;
+  getFrompointtype(): string;
+  setFrompointtype(value: string): void;
 
-  getReportnumber(): string;
-  setReportnumber(value: string): void;
+  getInspektionLengthmeasured(): number;
+  setInspektionLengthmeasured(value: number): void;
 
-  getBst(): string;
-  setBst(value: string): void;
+  getInspektionType(): string;
+  setInspektionType(value: string): void;
 
-  getAddress(): string;
-  setAddress(value: string): void;
+  getInspectionDifference(): number;
+  setInspectionDifference(value: number): void;
 
-  getDirection(): string;
-  setDirection(value: string): void;
+  getInspectionStop1(): number;
+  setInspectionStop1(value: number): void;
 
-  getCleaned(): string;
-  setCleaned(value: string): void;
+  getInspectionDirection(): string;
+  setInspectionDirection(value: string): void;
 
-  getWeather(): string;
-  setWeather(value: string): void;
+  getInspectrionName(): string;
+  setInspectrionName(value: string): void;
 
-  getInuse(): string;
-  setInuse(value: string): void;
+  getReportDescriptionGeneral(): string;
+  setReportDescriptionGeneral(value: string): void;
 
-  getOperator(): string;
-  setOperator(value: string): void;
+  getStatus(): string;
+  setStatus(value: string): void;
 
-  getCarnumber(): string;
-  setCarnumber(value: string): void;
+  getReportInspectionType(): string;
+  setReportInspectionType(value: string): void;
 
-  getCasenumber(): string;
-  setCasenumber(value: string): void;
+  getMaterialInspection(): string;
+  setMaterialInspection(value: string): void;
 
-  getInspectionmethod(): string;
-  setInspectionmethod(value: string): void;
+  getDimensionInspection(): string;
+  setDimensionInspection(value: string): void;
 
-  getMediaid(): string;
-  setMediaid(value: string): void;
+  getInspectionMetodeType(): string;
+  setInspectionMetodeType(value: string): void;
 
-  getFromtype(): string;
-  setFromtype(value: string): void;
+  getSectionCode(): string;
+  setSectionCode(value: string): void;
 
-  getTotype(): string;
-  setTotype(value: string): void;
+  getMedieid(): string;
+  setMedieid(value: string): void;
 
-  getInspectionreason(): string;
-  setInspectionreason(value: string): void;
+  getMediatype(): string;
+  setMediatype(value: string): void;
+
+  getInspektionDamage(): string;
+  setInspektionDamage(value: string): void;
+
+  getInspectionStart(): string;
+  setInspectionStart(value: string): void;
+
+  getPhysicalIndex(): string;
+  setPhysicalIndex(value: string): void;
+
+  getDrawingcode(): string;
+  setDrawingcode(value: string): void;
+
+  getCrosssection(): string;
+  setCrosssection(value: string): void;
+
+  getProfile(): string;
+  setProfile(value: string): void;
+
+  getAddressid(): string;
+  setAddressid(value: string): void;
+
+  getTopointaddess(): string;
+  setTopointaddess(value: string): void;
+
+  getSystemname(): string;
+  setSystemname(value: string): void;
+
+  getSystemage(): string;
+  setSystemage(value: string): void;
 
   getSystemdocumentation(): string;
   setSystemdocumentation(value: string): void;
@@ -524,32 +572,95 @@ export class SectionFrontObject extends jspb.Message {
   getSystemmedia(): string;
   setSystemmedia(value: string): void;
 
-  getPhysicalindex(): number;
-  setPhysicalindex(value: number): void;
+  getMaterialeidentified(): string;
+  setMaterialeidentified(value: string): void;
 
-  getAmountofplugs(): string;
-  setAmountofplugs(value: string): void;
+  getInspectionStop2(): string;
+  setInspectionStop2(value: string): void;
 
-  getExcept(): string;
-  setExcept(value: string): void;
+  getReporttype(): string;
+  setReporttype(value: string): void;
 
-  getManholelateral(): string;
-  setManholelateral(value: string): void;
+  getInspectionsectionStartpoint(): string;
+  setInspectionsectionStartpoint(value: string): void;
 
-  getPrework(): string;
-  setPrework(value: string): void;
+  getInspectionsectionEndpoint(): string;
+  setInspectionsectionEndpoint(value: string): void;
 
-  getMilled(): string;
-  setMilled(value: string): void;
+  getInspectionsectionDistance(): number;
+  setInspectionsectionDistance(value: number): void;
 
-  getLateraltypeid(): number;
-  setLateraltypeid(value: number): void;
+  getInspectionsectionumber(): number;
+  setInspectionsectionumber(value: number): void;
 
-  getRenovationstatusid(): number;
-  setRenovationstatusid(value: number): void;
+  getInspectionlateralclockreference(): string;
+  setInspectionlateralclockreference(value: string): void;
 
-  getPostion(): number;
-  setPostion(value: number): void;
+  getInspectionlateralclockreference6(): string;
+  setInspectionlateralclockreference6(value: string): void;
+
+  getComponentcode(): string;
+  setComponentcode(value: string): void;
+
+  getPhysicalindexvalue(): number;
+  setPhysicalindexvalue(value: number): void;
+
+  getInspectionDamagevalue(): number;
+  setInspectionDamagevalue(value: number): void;
+
+  getAmountofplugs(): number;
+  setAmountofplugs(value: number): void;
+
+  getGroup(): number;
+  setGroup(value: number): void;
+
+  getExcluded(): boolean;
+  setExcluded(value: boolean): void;
+
+  getManholesection(): boolean;
+  setManholesection(value: boolean): void;
+
+  getPreparatorywork(): boolean;
+  setPreparatorywork(value: boolean): void;
+
+  getMilled(): boolean;
+  setMilled(value: boolean): void;
+
+  getUsercomment(): string;
+  setUsercomment(value: string): void;
+
+  getPosition(): number;
+  setPosition(value: number): void;
+
+  getFrommanholeidOrginal(): number;
+  setFrommanholeidOrginal(value: number): void;
+
+  getTomanholeidOrginal(): number;
+  setTomanholeidOrginal(value: number): void;
+
+  getRenovationyear(): number;
+  setRenovationyear(value: number): void;
+
+  getChoosedeleterow(): boolean;
+  setChoosedeleterow(value: boolean): void;
+
+  getSagimportid(): number;
+  setSagimportid(value: number): void;
+
+  getSectionuufk(): number;
+  setSectionuufk(value: number): void;
+
+  getStiktypeid(): number;
+  setStiktypeid(value: number): void;
+
+  getPrioritetid(): number;
+  setPrioritetid(value: number): void;
+
+  getRenoveringStatusid(): number;
+  setRenoveringStatusid(value: number): void;
+
+  getSectionendpointid(): number;
+  setSectionendpointid(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SectionFrontObject.AsObject;
@@ -563,51 +674,88 @@ export class SectionFrontObject extends jspb.Message {
 
 export namespace SectionFrontObject {
   export type AsObject = {
-    lateralid: number,
-    caseid: number,
-    from: string,
-    to: string,
-    status: string,
+    sectionid: number,
+    from: number,
+    to: number,
+    sId: number,
+    sectionnumber: number,
+    tvOperator: string,
+    inspectionDate: string,
+    inspectionCity: string,
+    inspectionAddress: string,
+    inspectionWeather: string,
+    inspectionSectionnumber: number,
     dimension: string,
-    length: number,
-    material: string,
-    type: string,
-    lateral: number,
-    fi: string,
-    damage: number,
-    priority: number,
-    rehab: number,
-    sectiontype: string,
-    system: string,
-    position: string,
-    description: string,
-    date: string,
-    reportnumber: string,
-    bst: string,
-    address: string,
-    direction: string,
-    cleaned: string,
-    weather: string,
-    inuse: string,
-    operator: string,
-    carnumber: string,
-    casenumber: string,
-    inspectionmethod: string,
-    mediaid: string,
-    fromtype: string,
-    totype: string,
-    inspectionreason: string,
+    materiale: string,
+    lengthMeter: number,
+    yearofestablishment: string,
+    inspektionReportnumber: string,
+    reportDescription: string,
+    inspectionReason: string,
+    inspektionCarnumber: string,
+    inspektionCamera: string,
+    assignmentNumber: number,
+    videonumber: number,
+    inspectionCleaned: string,
+    topointtype: string,
+    frompointtype: string,
+    inspektionLengthmeasured: number,
+    inspektionType: string,
+    inspectionDifference: number,
+    inspectionStop1: number,
+    inspectionDirection: string,
+    inspectrionName: string,
+    reportDescriptionGeneral: string,
+    status: string,
+    reportInspectionType: string,
+    materialInspection: string,
+    dimensionInspection: string,
+    inspectionMetodeType: string,
+    sectionCode: string,
+    medieid: string,
+    mediatype: string,
+    inspektionDamage: string,
+    inspectionStart: string,
+    physicalIndex: string,
+    drawingcode: string,
+    crosssection: string,
+    profile: string,
+    addressid: string,
+    topointaddess: string,
+    systemname: string,
+    systemage: string,
     systemdocumentation: string,
     systemmedia: string,
-    physicalindex: number,
-    amountofplugs: string,
-    except: string,
-    manholelateral: string,
-    prework: string,
-    milled: string,
-    lateraltypeid: number,
-    renovationstatusid: number,
-    postion: number,
+    materialeidentified: string,
+    inspectionStop2: string,
+    reporttype: string,
+    inspectionsectionStartpoint: string,
+    inspectionsectionEndpoint: string,
+    inspectionsectionDistance: number,
+    inspectionsectionumber: number,
+    inspectionlateralclockreference: string,
+    inspectionlateralclockreference6: string,
+    componentcode: string,
+    physicalindexvalue: number,
+    inspectionDamagevalue: number,
+    amountofplugs: number,
+    group: number,
+    excluded: boolean,
+    manholesection: boolean,
+    preparatorywork: boolean,
+    milled: boolean,
+    usercomment: string,
+    position: number,
+    frommanholeidOrginal: number,
+    tomanholeidOrginal: number,
+    renovationyear: number,
+    choosedeleterow: boolean,
+    sagimportid: number,
+    sectionuufk: number,
+    stiktypeid: number,
+    prioritetid: number,
+    renoveringStatusid: number,
+    sectionendpointid: number,
   }
 }
 

@@ -3229,51 +3229,88 @@ proto.SectionPB.SectionFrontObject.prototype.toObject = function(opt_includeInst
  */
 proto.SectionPB.SectionFrontObject.toObject = function(includeInstance, msg) {
   var f, obj = {
-    lateralid: jspb.Message.getFieldWithDefault(msg, 1, 0),
-    caseid: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    from: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    to: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    status: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    dimension: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    length: jspb.Message.getFloatingPointFieldWithDefault(msg, 7, 0.0),
-    material: jspb.Message.getFieldWithDefault(msg, 8, ""),
-    type: jspb.Message.getFieldWithDefault(msg, 9, ""),
-    lateral: jspb.Message.getFieldWithDefault(msg, 10, 0),
-    fi: jspb.Message.getFieldWithDefault(msg, 11, ""),
-    damage: jspb.Message.getFloatingPointFieldWithDefault(msg, 12, 0.0),
-    priority: jspb.Message.getFieldWithDefault(msg, 13, 0),
-    rehab: jspb.Message.getFieldWithDefault(msg, 14, 0),
-    sectiontype: jspb.Message.getFieldWithDefault(msg, 15, ""),
-    system: jspb.Message.getFieldWithDefault(msg, 16, ""),
-    position: jspb.Message.getFieldWithDefault(msg, 17, ""),
-    description: jspb.Message.getFieldWithDefault(msg, 18, ""),
-    date: jspb.Message.getFieldWithDefault(msg, 19, ""),
-    reportnumber: jspb.Message.getFieldWithDefault(msg, 20, ""),
-    bst: jspb.Message.getFieldWithDefault(msg, 21, ""),
-    address: jspb.Message.getFieldWithDefault(msg, 22, ""),
-    direction: jspb.Message.getFieldWithDefault(msg, 23, ""),
-    cleaned: jspb.Message.getFieldWithDefault(msg, 24, ""),
-    weather: jspb.Message.getFieldWithDefault(msg, 25, ""),
-    inuse: jspb.Message.getFieldWithDefault(msg, 26, ""),
-    operator: jspb.Message.getFieldWithDefault(msg, 27, ""),
-    carnumber: jspb.Message.getFieldWithDefault(msg, 28, ""),
-    casenumber: jspb.Message.getFieldWithDefault(msg, 29, ""),
-    inspectionmethod: jspb.Message.getFieldWithDefault(msg, 30, ""),
-    mediaid: jspb.Message.getFieldWithDefault(msg, 31, ""),
-    fromtype: jspb.Message.getFieldWithDefault(msg, 32, ""),
-    totype: jspb.Message.getFieldWithDefault(msg, 33, ""),
-    inspectionreason: jspb.Message.getFieldWithDefault(msg, 34, ""),
-    systemdocumentation: jspb.Message.getFieldWithDefault(msg, 35, ""),
-    systemmedia: jspb.Message.getFieldWithDefault(msg, 36, ""),
-    physicalindex: jspb.Message.getFloatingPointFieldWithDefault(msg, 37, 0.0),
-    amountofplugs: jspb.Message.getFieldWithDefault(msg, 38, ""),
-    except: jspb.Message.getFieldWithDefault(msg, 39, ""),
-    manholelateral: jspb.Message.getFieldWithDefault(msg, 40, ""),
-    prework: jspb.Message.getFieldWithDefault(msg, 41, ""),
-    milled: jspb.Message.getFieldWithDefault(msg, 42, ""),
-    lateraltypeid: jspb.Message.getFieldWithDefault(msg, 43, 0),
-    renovationstatusid: jspb.Message.getFieldWithDefault(msg, 44, 0),
-    postion: jspb.Message.getFieldWithDefault(msg, 45, 0)
+    sectionid: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    from: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    to: jspb.Message.getFieldWithDefault(msg, 3, 0),
+    sId: jspb.Message.getFieldWithDefault(msg, 4, 0),
+    sectionnumber: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    tvOperator: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    inspectionDate: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    inspectionCity: jspb.Message.getFieldWithDefault(msg, 8, ""),
+    inspectionAddress: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    inspectionWeather: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    inspectionSectionnumber: jspb.Message.getFieldWithDefault(msg, 11, 0),
+    dimension: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    materiale: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    lengthMeter: jspb.Message.getFloatingPointFieldWithDefault(msg, 14, 0.0),
+    yearofestablishment: jspb.Message.getFieldWithDefault(msg, 15, ""),
+    inspektionReportnumber: jspb.Message.getFieldWithDefault(msg, 16, ""),
+    reportDescription: jspb.Message.getFieldWithDefault(msg, 17, ""),
+    inspectionReason: jspb.Message.getFieldWithDefault(msg, 18, ""),
+    inspektionCarnumber: jspb.Message.getFieldWithDefault(msg, 19, ""),
+    inspektionCamera: jspb.Message.getFieldWithDefault(msg, 20, ""),
+    assignmentNumber: jspb.Message.getFieldWithDefault(msg, 21, 0),
+    videonumber: jspb.Message.getFieldWithDefault(msg, 22, 0),
+    inspectionCleaned: jspb.Message.getFieldWithDefault(msg, 23, ""),
+    topointtype: jspb.Message.getFieldWithDefault(msg, 24, ""),
+    frompointtype: jspb.Message.getFieldWithDefault(msg, 25, ""),
+    inspektionLengthmeasured: jspb.Message.getFloatingPointFieldWithDefault(msg, 26, 0.0),
+    inspektionType: jspb.Message.getFieldWithDefault(msg, 27, ""),
+    inspectionDifference: jspb.Message.getFloatingPointFieldWithDefault(msg, 28, 0.0),
+    inspectionStop1: jspb.Message.getFloatingPointFieldWithDefault(msg, 29, 0.0),
+    inspectionDirection: jspb.Message.getFieldWithDefault(msg, 30, ""),
+    inspectrionName: jspb.Message.getFieldWithDefault(msg, 31, ""),
+    reportDescriptionGeneral: jspb.Message.getFieldWithDefault(msg, 32, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 33, ""),
+    reportInspectionType: jspb.Message.getFieldWithDefault(msg, 34, ""),
+    materialInspection: jspb.Message.getFieldWithDefault(msg, 35, ""),
+    dimensionInspection: jspb.Message.getFieldWithDefault(msg, 36, ""),
+    inspectionMetodeType: jspb.Message.getFieldWithDefault(msg, 37, ""),
+    sectionCode: jspb.Message.getFieldWithDefault(msg, 38, ""),
+    medieid: jspb.Message.getFieldWithDefault(msg, 39, ""),
+    mediatype: jspb.Message.getFieldWithDefault(msg, 40, ""),
+    inspektionDamage: jspb.Message.getFieldWithDefault(msg, 41, ""),
+    inspectionStart: jspb.Message.getFieldWithDefault(msg, 42, ""),
+    physicalIndex: jspb.Message.getFieldWithDefault(msg, 43, ""),
+    drawingcode: jspb.Message.getFieldWithDefault(msg, 44, ""),
+    crosssection: jspb.Message.getFieldWithDefault(msg, 45, ""),
+    profile: jspb.Message.getFieldWithDefault(msg, 46, ""),
+    addressid: jspb.Message.getFieldWithDefault(msg, 47, ""),
+    topointaddess: jspb.Message.getFieldWithDefault(msg, 48, ""),
+    systemname: jspb.Message.getFieldWithDefault(msg, 49, ""),
+    systemage: jspb.Message.getFieldWithDefault(msg, 50, ""),
+    systemdocumentation: jspb.Message.getFieldWithDefault(msg, 51, ""),
+    systemmedia: jspb.Message.getFieldWithDefault(msg, 52, ""),
+    materialeidentified: jspb.Message.getFieldWithDefault(msg, 53, ""),
+    inspectionStop2: jspb.Message.getFieldWithDefault(msg, 54, ""),
+    reporttype: jspb.Message.getFieldWithDefault(msg, 55, ""),
+    inspectionsectionStartpoint: jspb.Message.getFieldWithDefault(msg, 56, ""),
+    inspectionsectionEndpoint: jspb.Message.getFieldWithDefault(msg, 57, ""),
+    inspectionsectionDistance: jspb.Message.getFloatingPointFieldWithDefault(msg, 58, 0.0),
+    inspectionsectionumber: jspb.Message.getFieldWithDefault(msg, 59, 0),
+    inspectionlateralclockreference: jspb.Message.getFieldWithDefault(msg, 60, ""),
+    inspectionlateralclockreference6: jspb.Message.getFieldWithDefault(msg, 61, ""),
+    componentcode: jspb.Message.getFieldWithDefault(msg, 62, ""),
+    physicalindexvalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 63, 0.0),
+    inspectionDamagevalue: jspb.Message.getFloatingPointFieldWithDefault(msg, 64, 0.0),
+    amountofplugs: jspb.Message.getFieldWithDefault(msg, 65, 0),
+    group: jspb.Message.getFieldWithDefault(msg, 66, 0),
+    excluded: jspb.Message.getBooleanFieldWithDefault(msg, 67, false),
+    manholesection: jspb.Message.getBooleanFieldWithDefault(msg, 68, false),
+    preparatorywork: jspb.Message.getBooleanFieldWithDefault(msg, 69, false),
+    milled: jspb.Message.getBooleanFieldWithDefault(msg, 70, false),
+    usercomment: jspb.Message.getFieldWithDefault(msg, 71, ""),
+    position: jspb.Message.getFieldWithDefault(msg, 72, 0),
+    frommanholeidOrginal: jspb.Message.getFieldWithDefault(msg, 73, 0),
+    tomanholeidOrginal: jspb.Message.getFieldWithDefault(msg, 74, 0),
+    renovationyear: jspb.Message.getFieldWithDefault(msg, 75, 0),
+    choosedeleterow: jspb.Message.getBooleanFieldWithDefault(msg, 76, false),
+    sagimportid: jspb.Message.getFieldWithDefault(msg, 77, 0),
+    sectionuufk: jspb.Message.getFieldWithDefault(msg, 78, 0),
+    stiktypeid: jspb.Message.getFieldWithDefault(msg, 79, 0),
+    prioritetid: jspb.Message.getFieldWithDefault(msg, 80, 0),
+    renoveringStatusid: jspb.Message.getFieldWithDefault(msg, 81, 0),
+    sectionendpointid: jspb.Message.getFieldWithDefault(msg, 82, 0)
   };
 
   if (includeInstance) {
@@ -3312,183 +3349,331 @@ proto.SectionPB.SectionFrontObject.deserializeBinaryFromReader = function(msg, r
     switch (field) {
     case 1:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setLateralid(value);
+      msg.setSectionid(value);
       break;
     case 2:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setCaseid(value);
-      break;
-    case 3:
-      var value = /** @type {string} */ (reader.readString());
       msg.setFrom(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
       msg.setTo(value);
       break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSId(value);
+      break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setStatus(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSectionnumber(value);
       break;
     case 6:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDimension(value);
+      msg.setTvOperator(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setLength(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionDate(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMaterial(value);
+      msg.setInspectionCity(value);
       break;
     case 9:
       var value = /** @type {string} */ (reader.readString());
-      msg.setType(value);
+      msg.setInspectionAddress(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setLateral(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionWeather(value);
       break;
     case 11:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setFi(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setInspectionSectionnumber(value);
       break;
     case 12:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setDamage(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDimension(value);
       break;
     case 13:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setPriority(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMateriale(value);
       break;
     case 14:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRehab(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setLengthMeter(value);
       break;
     case 15:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSectiontype(value);
+      msg.setYearofestablishment(value);
       break;
     case 16:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSystem(value);
+      msg.setInspektionReportnumber(value);
       break;
     case 17:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPosition(value);
+      msg.setReportDescription(value);
       break;
     case 18:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDescription(value);
+      msg.setInspectionReason(value);
       break;
     case 19:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDate(value);
+      msg.setInspektionCarnumber(value);
       break;
     case 20:
       var value = /** @type {string} */ (reader.readString());
-      msg.setReportnumber(value);
+      msg.setInspektionCamera(value);
       break;
     case 21:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setBst(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAssignmentNumber(value);
       break;
     case 22:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setAddress(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setVideonumber(value);
       break;
     case 23:
       var value = /** @type {string} */ (reader.readString());
-      msg.setDirection(value);
+      msg.setInspectionCleaned(value);
       break;
     case 24:
       var value = /** @type {string} */ (reader.readString());
-      msg.setCleaned(value);
+      msg.setTopointtype(value);
       break;
     case 25:
       var value = /** @type {string} */ (reader.readString());
-      msg.setWeather(value);
+      msg.setFrompointtype(value);
       break;
     case 26:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setInuse(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setInspektionLengthmeasured(value);
       break;
     case 27:
       var value = /** @type {string} */ (reader.readString());
-      msg.setOperator(value);
+      msg.setInspektionType(value);
       break;
     case 28:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCarnumber(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setInspectionDifference(value);
       break;
     case 29:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setCasenumber(value);
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setInspectionStop1(value);
       break;
     case 30:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInspectionmethod(value);
+      msg.setInspectionDirection(value);
       break;
     case 31:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMediaid(value);
+      msg.setInspectrionName(value);
       break;
     case 32:
       var value = /** @type {string} */ (reader.readString());
-      msg.setFromtype(value);
+      msg.setReportDescriptionGeneral(value);
       break;
     case 33:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTotype(value);
+      msg.setStatus(value);
       break;
     case 34:
       var value = /** @type {string} */ (reader.readString());
-      msg.setInspectionreason(value);
+      msg.setReportInspectionType(value);
       break;
     case 35:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSystemdocumentation(value);
+      msg.setMaterialInspection(value);
       break;
     case 36:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSystemmedia(value);
+      msg.setDimensionInspection(value);
       break;
     case 37:
-      var value = /** @type {number} */ (reader.readFloat());
-      msg.setPhysicalindex(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionMetodeType(value);
       break;
     case 38:
       var value = /** @type {string} */ (reader.readString());
-      msg.setAmountofplugs(value);
+      msg.setSectionCode(value);
       break;
     case 39:
       var value = /** @type {string} */ (reader.readString());
-      msg.setExcept(value);
+      msg.setMedieid(value);
       break;
     case 40:
       var value = /** @type {string} */ (reader.readString());
-      msg.setManholelateral(value);
+      msg.setMediatype(value);
       break;
     case 41:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPrework(value);
+      msg.setInspektionDamage(value);
       break;
     case 42:
       var value = /** @type {string} */ (reader.readString());
-      msg.setMilled(value);
+      msg.setInspectionStart(value);
       break;
     case 43:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setLateraltypeid(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPhysicalIndex(value);
       break;
     case 44:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setRenovationstatusid(value);
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDrawingcode(value);
       break;
     case 45:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCrosssection(value);
+      break;
+    case 46:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setProfile(value);
+      break;
+    case 47:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAddressid(value);
+      break;
+    case 48:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTopointaddess(value);
+      break;
+    case 49:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSystemname(value);
+      break;
+    case 50:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSystemage(value);
+      break;
+    case 51:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSystemdocumentation(value);
+      break;
+    case 52:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSystemmedia(value);
+      break;
+    case 53:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setMaterialeidentified(value);
+      break;
+    case 54:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionStop2(value);
+      break;
+    case 55:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setReporttype(value);
+      break;
+    case 56:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionsectionStartpoint(value);
+      break;
+    case 57:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionsectionEndpoint(value);
+      break;
+    case 58:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setInspectionsectionDistance(value);
+      break;
+    case 59:
       var value = /** @type {number} */ (reader.readInt32());
-      msg.setPostion(value);
+      msg.setInspectionsectionumber(value);
+      break;
+    case 60:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionlateralclockreference(value);
+      break;
+    case 61:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setInspectionlateralclockreference6(value);
+      break;
+    case 62:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setComponentcode(value);
+      break;
+    case 63:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setPhysicalindexvalue(value);
+      break;
+    case 64:
+      var value = /** @type {number} */ (reader.readFloat());
+      msg.setInspectionDamagevalue(value);
+      break;
+    case 65:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setAmountofplugs(value);
+      break;
+    case 66:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setGroup(value);
+      break;
+    case 67:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExcluded(value);
+      break;
+    case 68:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setManholesection(value);
+      break;
+    case 69:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setPreparatorywork(value);
+      break;
+    case 70:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setMilled(value);
+      break;
+    case 71:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setUsercomment(value);
+      break;
+    case 72:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPosition(value);
+      break;
+    case 73:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setFrommanholeidOrginal(value);
+      break;
+    case 74:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTomanholeidOrginal(value);
+      break;
+    case 75:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRenovationyear(value);
+      break;
+    case 76:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setChoosedeleterow(value);
+      break;
+    case 77:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSagimportid(value);
+      break;
+    case 78:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSectionuufk(value);
+      break;
+    case 79:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setStiktypeid(value);
+      break;
+    case 80:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setPrioritetid(value);
+      break;
+    case 81:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setRenoveringStatusid(value);
+      break;
+    case 82:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setSectionendpointid(value);
       break;
     default:
       reader.skipField();
@@ -3519,318 +3704,577 @@ proto.SectionPB.SectionFrontObject.prototype.serializeBinary = function() {
  */
 proto.SectionPB.SectionFrontObject.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getLateralid();
+  f = message.getSectionid();
   if (f !== 0) {
     writer.writeInt32(
       1,
       f
     );
   }
-  f = message.getCaseid();
+  f = message.getFrom();
   if (f !== 0) {
     writer.writeInt32(
       2,
       f
     );
   }
-  f = message.getFrom();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getTo();
+  if (f !== 0) {
+    writer.writeInt32(
       3,
       f
     );
   }
-  f = message.getTo();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getSId();
+  if (f !== 0) {
+    writer.writeInt32(
       4,
       f
     );
   }
-  f = message.getStatus();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getSectionnumber();
+  if (f !== 0) {
+    writer.writeInt32(
       5,
       f
     );
   }
-  f = message.getDimension();
+  f = message.getTvOperator();
   if (f.length > 0) {
     writer.writeString(
       6,
       f
     );
   }
-  f = message.getLength();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  f = message.getInspectionDate();
+  if (f.length > 0) {
+    writer.writeString(
       7,
       f
     );
   }
-  f = message.getMaterial();
+  f = message.getInspectionCity();
   if (f.length > 0) {
     writer.writeString(
       8,
       f
     );
   }
-  f = message.getType();
+  f = message.getInspectionAddress();
   if (f.length > 0) {
     writer.writeString(
       9,
       f
     );
   }
-  f = message.getLateral();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getInspectionWeather();
+  if (f.length > 0) {
+    writer.writeString(
       10,
       f
     );
   }
-  f = message.getFi();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInspectionSectionnumber();
+  if (f !== 0) {
+    writer.writeInt32(
       11,
       f
     );
   }
-  f = message.getDamage();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  f = message.getDimension();
+  if (f.length > 0) {
+    writer.writeString(
       12,
       f
     );
   }
-  f = message.getPriority();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getMateriale();
+  if (f.length > 0) {
+    writer.writeString(
       13,
       f
     );
   }
-  f = message.getRehab();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getLengthMeter();
+  if (f !== 0.0) {
+    writer.writeFloat(
       14,
       f
     );
   }
-  f = message.getSectiontype();
+  f = message.getYearofestablishment();
   if (f.length > 0) {
     writer.writeString(
       15,
       f
     );
   }
-  f = message.getSystem();
+  f = message.getInspektionReportnumber();
   if (f.length > 0) {
     writer.writeString(
       16,
       f
     );
   }
-  f = message.getPosition();
+  f = message.getReportDescription();
   if (f.length > 0) {
     writer.writeString(
       17,
       f
     );
   }
-  f = message.getDescription();
+  f = message.getInspectionReason();
   if (f.length > 0) {
     writer.writeString(
       18,
       f
     );
   }
-  f = message.getDate();
+  f = message.getInspektionCarnumber();
   if (f.length > 0) {
     writer.writeString(
       19,
       f
     );
   }
-  f = message.getReportnumber();
+  f = message.getInspektionCamera();
   if (f.length > 0) {
     writer.writeString(
       20,
       f
     );
   }
-  f = message.getBst();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getAssignmentNumber();
+  if (f !== 0) {
+    writer.writeInt32(
       21,
       f
     );
   }
-  f = message.getAddress();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getVideonumber();
+  if (f !== 0) {
+    writer.writeInt32(
       22,
       f
     );
   }
-  f = message.getDirection();
+  f = message.getInspectionCleaned();
   if (f.length > 0) {
     writer.writeString(
       23,
       f
     );
   }
-  f = message.getCleaned();
+  f = message.getTopointtype();
   if (f.length > 0) {
     writer.writeString(
       24,
       f
     );
   }
-  f = message.getWeather();
+  f = message.getFrompointtype();
   if (f.length > 0) {
     writer.writeString(
       25,
       f
     );
   }
-  f = message.getInuse();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInspektionLengthmeasured();
+  if (f !== 0.0) {
+    writer.writeFloat(
       26,
       f
     );
   }
-  f = message.getOperator();
+  f = message.getInspektionType();
   if (f.length > 0) {
     writer.writeString(
       27,
       f
     );
   }
-  f = message.getCarnumber();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInspectionDifference();
+  if (f !== 0.0) {
+    writer.writeFloat(
       28,
       f
     );
   }
-  f = message.getCasenumber();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getInspectionStop1();
+  if (f !== 0.0) {
+    writer.writeFloat(
       29,
       f
     );
   }
-  f = message.getInspectionmethod();
+  f = message.getInspectionDirection();
   if (f.length > 0) {
     writer.writeString(
       30,
       f
     );
   }
-  f = message.getMediaid();
+  f = message.getInspectrionName();
   if (f.length > 0) {
     writer.writeString(
       31,
       f
     );
   }
-  f = message.getFromtype();
+  f = message.getReportDescriptionGeneral();
   if (f.length > 0) {
     writer.writeString(
       32,
       f
     );
   }
-  f = message.getTotype();
+  f = message.getStatus();
   if (f.length > 0) {
     writer.writeString(
       33,
       f
     );
   }
-  f = message.getInspectionreason();
+  f = message.getReportInspectionType();
   if (f.length > 0) {
     writer.writeString(
       34,
       f
     );
   }
-  f = message.getSystemdocumentation();
+  f = message.getMaterialInspection();
   if (f.length > 0) {
     writer.writeString(
       35,
       f
     );
   }
-  f = message.getSystemmedia();
+  f = message.getDimensionInspection();
   if (f.length > 0) {
     writer.writeString(
       36,
       f
     );
   }
-  f = message.getPhysicalindex();
-  if (f !== 0.0) {
-    writer.writeFloat(
+  f = message.getInspectionMetodeType();
+  if (f.length > 0) {
+    writer.writeString(
       37,
       f
     );
   }
-  f = message.getAmountofplugs();
+  f = message.getSectionCode();
   if (f.length > 0) {
     writer.writeString(
       38,
       f
     );
   }
-  f = message.getExcept();
+  f = message.getMedieid();
   if (f.length > 0) {
     writer.writeString(
       39,
       f
     );
   }
-  f = message.getManholelateral();
+  f = message.getMediatype();
   if (f.length > 0) {
     writer.writeString(
       40,
       f
     );
   }
-  f = message.getPrework();
+  f = message.getInspektionDamage();
   if (f.length > 0) {
     writer.writeString(
       41,
       f
     );
   }
-  f = message.getMilled();
+  f = message.getInspectionStart();
   if (f.length > 0) {
     writer.writeString(
       42,
       f
     );
   }
-  f = message.getLateraltypeid();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getPhysicalIndex();
+  if (f.length > 0) {
+    writer.writeString(
       43,
       f
     );
   }
-  f = message.getRenovationstatusid();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getDrawingcode();
+  if (f.length > 0) {
+    writer.writeString(
       44,
       f
     );
   }
-  f = message.getPostion();
+  f = message.getCrosssection();
+  if (f.length > 0) {
+    writer.writeString(
+      45,
+      f
+    );
+  }
+  f = message.getProfile();
+  if (f.length > 0) {
+    writer.writeString(
+      46,
+      f
+    );
+  }
+  f = message.getAddressid();
+  if (f.length > 0) {
+    writer.writeString(
+      47,
+      f
+    );
+  }
+  f = message.getTopointaddess();
+  if (f.length > 0) {
+    writer.writeString(
+      48,
+      f
+    );
+  }
+  f = message.getSystemname();
+  if (f.length > 0) {
+    writer.writeString(
+      49,
+      f
+    );
+  }
+  f = message.getSystemage();
+  if (f.length > 0) {
+    writer.writeString(
+      50,
+      f
+    );
+  }
+  f = message.getSystemdocumentation();
+  if (f.length > 0) {
+    writer.writeString(
+      51,
+      f
+    );
+  }
+  f = message.getSystemmedia();
+  if (f.length > 0) {
+    writer.writeString(
+      52,
+      f
+    );
+  }
+  f = message.getMaterialeidentified();
+  if (f.length > 0) {
+    writer.writeString(
+      53,
+      f
+    );
+  }
+  f = message.getInspectionStop2();
+  if (f.length > 0) {
+    writer.writeString(
+      54,
+      f
+    );
+  }
+  f = message.getReporttype();
+  if (f.length > 0) {
+    writer.writeString(
+      55,
+      f
+    );
+  }
+  f = message.getInspectionsectionStartpoint();
+  if (f.length > 0) {
+    writer.writeString(
+      56,
+      f
+    );
+  }
+  f = message.getInspectionsectionEndpoint();
+  if (f.length > 0) {
+    writer.writeString(
+      57,
+      f
+    );
+  }
+  f = message.getInspectionsectionDistance();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      58,
+      f
+    );
+  }
+  f = message.getInspectionsectionumber();
   if (f !== 0) {
     writer.writeInt32(
-      45,
+      59,
+      f
+    );
+  }
+  f = message.getInspectionlateralclockreference();
+  if (f.length > 0) {
+    writer.writeString(
+      60,
+      f
+    );
+  }
+  f = message.getInspectionlateralclockreference6();
+  if (f.length > 0) {
+    writer.writeString(
+      61,
+      f
+    );
+  }
+  f = message.getComponentcode();
+  if (f.length > 0) {
+    writer.writeString(
+      62,
+      f
+    );
+  }
+  f = message.getPhysicalindexvalue();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      63,
+      f
+    );
+  }
+  f = message.getInspectionDamagevalue();
+  if (f !== 0.0) {
+    writer.writeFloat(
+      64,
+      f
+    );
+  }
+  f = message.getAmountofplugs();
+  if (f !== 0) {
+    writer.writeInt32(
+      65,
+      f
+    );
+  }
+  f = message.getGroup();
+  if (f !== 0) {
+    writer.writeInt32(
+      66,
+      f
+    );
+  }
+  f = message.getExcluded();
+  if (f) {
+    writer.writeBool(
+      67,
+      f
+    );
+  }
+  f = message.getManholesection();
+  if (f) {
+    writer.writeBool(
+      68,
+      f
+    );
+  }
+  f = message.getPreparatorywork();
+  if (f) {
+    writer.writeBool(
+      69,
+      f
+    );
+  }
+  f = message.getMilled();
+  if (f) {
+    writer.writeBool(
+      70,
+      f
+    );
+  }
+  f = message.getUsercomment();
+  if (f.length > 0) {
+    writer.writeString(
+      71,
+      f
+    );
+  }
+  f = message.getPosition();
+  if (f !== 0) {
+    writer.writeInt32(
+      72,
+      f
+    );
+  }
+  f = message.getFrommanholeidOrginal();
+  if (f !== 0) {
+    writer.writeInt32(
+      73,
+      f
+    );
+  }
+  f = message.getTomanholeidOrginal();
+  if (f !== 0) {
+    writer.writeInt32(
+      74,
+      f
+    );
+  }
+  f = message.getRenovationyear();
+  if (f !== 0) {
+    writer.writeInt32(
+      75,
+      f
+    );
+  }
+  f = message.getChoosedeleterow();
+  if (f) {
+    writer.writeBool(
+      76,
+      f
+    );
+  }
+  f = message.getSagimportid();
+  if (f !== 0) {
+    writer.writeInt32(
+      77,
+      f
+    );
+  }
+  f = message.getSectionuufk();
+  if (f !== 0) {
+    writer.writeInt32(
+      78,
+      f
+    );
+  }
+  f = message.getStiktypeid();
+  if (f !== 0) {
+    writer.writeInt32(
+      79,
+      f
+    );
+  }
+  f = message.getPrioritetid();
+  if (f !== 0) {
+    writer.writeInt32(
+      80,
+      f
+    );
+  }
+  f = message.getRenoveringStatusid();
+  if (f !== 0) {
+    writer.writeInt32(
+      81,
+      f
+    );
+  }
+  f = message.getSectionendpointid();
+  if (f !== 0) {
+    writer.writeInt32(
+      82,
       f
     );
   }
@@ -3838,10 +4282,10 @@ proto.SectionPB.SectionFrontObject.serializeBinaryToWriter = function(message, w
 
 
 /**
- * optional int32 lateralID = 1;
+ * optional int32 SectionId = 1;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getLateralid = function() {
+proto.SectionPB.SectionFrontObject.prototype.getSectionid = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
@@ -3850,16 +4294,16 @@ proto.SectionPB.SectionFrontObject.prototype.getLateralid = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setLateralid = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setSectionid = function(value) {
   return jspb.Message.setProto3IntField(this, 1, value);
 };
 
 
 /**
- * optional int32 caseID = 2;
+ * optional int32 from = 2;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getCaseid = function() {
+proto.SectionPB.SectionFrontObject.prototype.getFrom = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
 };
 
@@ -3868,70 +4312,70 @@ proto.SectionPB.SectionFrontObject.prototype.getCaseid = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setCaseid = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setFrom = function(value) {
   return jspb.Message.setProto3IntField(this, 2, value);
 };
 
 
 /**
- * optional string from = 3;
- * @return {string}
- */
-proto.SectionPB.SectionFrontObject.prototype.getFrom = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setFrom = function(value) {
-  return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string to = 4;
- * @return {string}
+ * optional int32 to = 3;
+ * @return {number}
  */
 proto.SectionPB.SectionFrontObject.prototype.getTo = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
 proto.SectionPB.SectionFrontObject.prototype.setTo = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
 /**
- * optional string status = 5;
- * @return {string}
+ * optional int32 S_ID = 4;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getStatus = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.SectionPB.SectionFrontObject.prototype.getSId = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setStatus = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.SectionPB.SectionFrontObject.prototype.setSId = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
 };
 
 
 /**
- * optional string dimension = 6;
+ * optional int32 sectionNumber = 5;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSectionnumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSectionnumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional string TV_Operator = 6;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getDimension = function() {
+proto.SectionPB.SectionFrontObject.prototype.getTvOperator = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -3940,34 +4384,34 @@ proto.SectionPB.SectionFrontObject.prototype.getDimension = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setDimension = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setTvOperator = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
 };
 
 
 /**
- * optional float length = 7;
- * @return {number}
- */
-proto.SectionPB.SectionFrontObject.prototype.getLength = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 7, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setLength = function(value) {
-  return jspb.Message.setProto3FloatField(this, 7, value);
-};
-
-
-/**
- * optional string material = 8;
+ * optional string Inspection_Date = 7;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getMaterial = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * optional string Inspection_City = 8;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionCity = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
@@ -3976,16 +4420,16 @@ proto.SectionPB.SectionFrontObject.prototype.getMaterial = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setMaterial = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionCity = function(value) {
   return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 
 /**
- * optional string type = 9;
+ * optional string Inspection_Address = 9;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getType = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionAddress = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
 };
 
@@ -3994,35 +4438,17 @@ proto.SectionPB.SectionFrontObject.prototype.getType = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setType = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionAddress = function(value) {
   return jspb.Message.setProto3StringField(this, 9, value);
 };
 
 
 /**
- * optional int32 lateral = 10;
- * @return {number}
- */
-proto.SectionPB.SectionFrontObject.prototype.getLateral = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setLateral = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
-};
-
-
-/**
- * optional string fi = 11;
+ * optional string Inspection_Weather = 10;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getFi = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionWeather = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
 };
 
 
@@ -4030,17 +4456,17 @@ proto.SectionPB.SectionFrontObject.prototype.getFi = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setFi = function(value) {
-  return jspb.Message.setProto3StringField(this, 11, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionWeather = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
 };
 
 
 /**
- * optional float damage = 12;
+ * optional int32 Inspection_SectionNumber = 11;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getDamage = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 12, 0.0));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionSectionnumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 11, 0));
 };
 
 
@@ -4048,52 +4474,70 @@ proto.SectionPB.SectionFrontObject.prototype.getDamage = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setDamage = function(value) {
-  return jspb.Message.setProto3FloatField(this, 12, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionSectionnumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 11, value);
 };
 
 
 /**
- * optional int32 priority = 13;
- * @return {number}
- */
-proto.SectionPB.SectionFrontObject.prototype.getPriority = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 13, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setPriority = function(value) {
-  return jspb.Message.setProto3IntField(this, 13, value);
-};
-
-
-/**
- * optional int32 rehab = 14;
- * @return {number}
- */
-proto.SectionPB.SectionFrontObject.prototype.getRehab = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 14, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setRehab = function(value) {
-  return jspb.Message.setProto3IntField(this, 14, value);
-};
-
-
-/**
- * optional string sectionType = 15;
+ * optional string Dimension = 12;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getSectiontype = function() {
+proto.SectionPB.SectionFrontObject.prototype.getDimension = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setDimension = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string Materiale = 13;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getMateriale = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setMateriale = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional float Length_Meter = 14;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getLengthMeter = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 14, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setLengthMeter = function(value) {
+  return jspb.Message.setProto3FloatField(this, 14, value);
+};
+
+
+/**
+ * optional string YearOfEstablishment = 15;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getYearofestablishment = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 15, ""));
 };
 
@@ -4102,16 +4546,16 @@ proto.SectionPB.SectionFrontObject.prototype.getSectiontype = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setSectiontype = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setYearofestablishment = function(value) {
   return jspb.Message.setProto3StringField(this, 15, value);
 };
 
 
 /**
- * optional string system = 16;
+ * optional string Inspektion_ReportNumber = 16;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getSystem = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspektionReportnumber = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 16, ""));
 };
 
@@ -4120,16 +4564,16 @@ proto.SectionPB.SectionFrontObject.prototype.getSystem = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setSystem = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspektionReportnumber = function(value) {
   return jspb.Message.setProto3StringField(this, 16, value);
 };
 
 
 /**
- * optional string position = 17;
+ * optional string Report_Description = 17;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getPosition = function() {
+proto.SectionPB.SectionFrontObject.prototype.getReportDescription = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 17, ""));
 };
 
@@ -4138,16 +4582,16 @@ proto.SectionPB.SectionFrontObject.prototype.getPosition = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setPosition = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setReportDescription = function(value) {
   return jspb.Message.setProto3StringField(this, 17, value);
 };
 
 
 /**
- * optional string description = 18;
+ * optional string Inspection_Reason = 18;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getDescription = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionReason = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 18, ""));
 };
 
@@ -4156,16 +4600,16 @@ proto.SectionPB.SectionFrontObject.prototype.getDescription = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setDescription = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionReason = function(value) {
   return jspb.Message.setProto3StringField(this, 18, value);
 };
 
 
 /**
- * optional string date = 19;
+ * optional string Inspektion_CarNumber = 19;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getDate = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspektionCarnumber = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 19, ""));
 };
 
@@ -4174,16 +4618,16 @@ proto.SectionPB.SectionFrontObject.prototype.getDate = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setDate = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspektionCarnumber = function(value) {
   return jspb.Message.setProto3StringField(this, 19, value);
 };
 
 
 /**
- * optional string reportNumber = 20;
+ * optional string Inspektion_Camera = 20;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getReportnumber = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspektionCamera = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 20, ""));
 };
 
@@ -4192,52 +4636,52 @@ proto.SectionPB.SectionFrontObject.prototype.getReportnumber = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setReportnumber = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspektionCamera = function(value) {
   return jspb.Message.setProto3StringField(this, 20, value);
 };
 
 
 /**
- * optional string bst = 21;
- * @return {string}
+ * optional int32 Assignment_Number = 21;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getBst = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 21, ""));
+proto.SectionPB.SectionFrontObject.prototype.getAssignmentNumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 21, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setBst = function(value) {
-  return jspb.Message.setProto3StringField(this, 21, value);
+proto.SectionPB.SectionFrontObject.prototype.setAssignmentNumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 21, value);
 };
 
 
 /**
- * optional string address = 22;
- * @return {string}
+ * optional int32 VideoNumber = 22;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getAddress = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 22, ""));
+proto.SectionPB.SectionFrontObject.prototype.getVideonumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 22, 0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setAddress = function(value) {
-  return jspb.Message.setProto3StringField(this, 22, value);
+proto.SectionPB.SectionFrontObject.prototype.setVideonumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 22, value);
 };
 
 
 /**
- * optional string direction = 23;
+ * optional string Inspection_Cleaned = 23;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getDirection = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionCleaned = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 23, ""));
 };
 
@@ -4246,16 +4690,16 @@ proto.SectionPB.SectionFrontObject.prototype.getDirection = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setDirection = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionCleaned = function(value) {
   return jspb.Message.setProto3StringField(this, 23, value);
 };
 
 
 /**
- * optional string cleaned = 24;
+ * optional string ToPointType = 24;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getCleaned = function() {
+proto.SectionPB.SectionFrontObject.prototype.getTopointtype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 24, ""));
 };
 
@@ -4264,16 +4708,16 @@ proto.SectionPB.SectionFrontObject.prototype.getCleaned = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setCleaned = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setTopointtype = function(value) {
   return jspb.Message.setProto3StringField(this, 24, value);
 };
 
 
 /**
- * optional string weather = 25;
+ * optional string FromPointType = 25;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getWeather = function() {
+proto.SectionPB.SectionFrontObject.prototype.getFrompointtype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 25, ""));
 };
 
@@ -4282,34 +4726,34 @@ proto.SectionPB.SectionFrontObject.prototype.getWeather = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setWeather = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setFrompointtype = function(value) {
   return jspb.Message.setProto3StringField(this, 25, value);
 };
 
 
 /**
- * optional string inuse = 26;
- * @return {string}
+ * optional float Inspektion_LengthMeasured = 26;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getInuse = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 26, ""));
+proto.SectionPB.SectionFrontObject.prototype.getInspektionLengthmeasured = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 26, 0.0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setInuse = function(value) {
-  return jspb.Message.setProto3StringField(this, 26, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspektionLengthmeasured = function(value) {
+  return jspb.Message.setProto3FloatField(this, 26, value);
 };
 
 
 /**
- * optional string operator = 27;
+ * optional string Inspektion_Type = 27;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getOperator = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspektionType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 27, ""));
 };
 
@@ -4318,52 +4762,52 @@ proto.SectionPB.SectionFrontObject.prototype.getOperator = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setOperator = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspektionType = function(value) {
   return jspb.Message.setProto3StringField(this, 27, value);
 };
 
 
 /**
- * optional string carNumber = 28;
- * @return {string}
+ * optional float Inspection_Difference = 28;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getCarnumber = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 28, ""));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionDifference = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 28, 0.0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setCarnumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 28, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionDifference = function(value) {
+  return jspb.Message.setProto3FloatField(this, 28, value);
 };
 
 
 /**
- * optional string caseNumber = 29;
- * @return {string}
+ * optional float Inspection_Stop1 = 29;
+ * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getCasenumber = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 29, ""));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionStop1 = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 29, 0.0));
 };
 
 
 /**
- * @param {string} value
+ * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setCasenumber = function(value) {
-  return jspb.Message.setProto3StringField(this, 29, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionStop1 = function(value) {
+  return jspb.Message.setProto3FloatField(this, 29, value);
 };
 
 
 /**
- * optional string inspectionMethod = 30;
+ * optional string Inspection_Direction = 30;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getInspectionmethod = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionDirection = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 30, ""));
 };
 
@@ -4372,16 +4816,16 @@ proto.SectionPB.SectionFrontObject.prototype.getInspectionmethod = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setInspectionmethod = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionDirection = function(value) {
   return jspb.Message.setProto3StringField(this, 30, value);
 };
 
 
 /**
- * optional string mediaID = 31;
+ * optional string Inspectrion_Name = 31;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getMediaid = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectrionName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 31, ""));
 };
 
@@ -4390,16 +4834,16 @@ proto.SectionPB.SectionFrontObject.prototype.getMediaid = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setMediaid = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectrionName = function(value) {
   return jspb.Message.setProto3StringField(this, 31, value);
 };
 
 
 /**
- * optional string fromType = 32;
+ * optional string Report_Description_General = 32;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getFromtype = function() {
+proto.SectionPB.SectionFrontObject.prototype.getReportDescriptionGeneral = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 32, ""));
 };
 
@@ -4408,16 +4852,16 @@ proto.SectionPB.SectionFrontObject.prototype.getFromtype = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setFromtype = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setReportDescriptionGeneral = function(value) {
   return jspb.Message.setProto3StringField(this, 32, value);
 };
 
 
 /**
- * optional string toType = 33;
+ * optional string Status = 33;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getTotype = function() {
+proto.SectionPB.SectionFrontObject.prototype.getStatus = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 33, ""));
 };
 
@@ -4426,16 +4870,16 @@ proto.SectionPB.SectionFrontObject.prototype.getTotype = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setTotype = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setStatus = function(value) {
   return jspb.Message.setProto3StringField(this, 33, value);
 };
 
 
 /**
- * optional string inspectionReason = 34;
+ * optional string Report_Inspection_Type = 34;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getInspectionreason = function() {
+proto.SectionPB.SectionFrontObject.prototype.getReportInspectionType = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 34, ""));
 };
 
@@ -4444,16 +4888,16 @@ proto.SectionPB.SectionFrontObject.prototype.getInspectionreason = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setInspectionreason = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setReportInspectionType = function(value) {
   return jspb.Message.setProto3StringField(this, 34, value);
 };
 
 
 /**
- * optional string systemDocumentation = 35;
+ * optional string Material_Inspection = 35;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getSystemdocumentation = function() {
+proto.SectionPB.SectionFrontObject.prototype.getMaterialInspection = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 35, ""));
 };
 
@@ -4462,16 +4906,16 @@ proto.SectionPB.SectionFrontObject.prototype.getSystemdocumentation = function()
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setSystemdocumentation = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setMaterialInspection = function(value) {
   return jspb.Message.setProto3StringField(this, 35, value);
 };
 
 
 /**
- * optional string systemMedia = 36;
+ * optional string Dimension_Inspection = 36;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getSystemmedia = function() {
+proto.SectionPB.SectionFrontObject.prototype.getDimensionInspection = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 36, ""));
 };
 
@@ -4480,34 +4924,34 @@ proto.SectionPB.SectionFrontObject.prototype.getSystemmedia = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setSystemmedia = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setDimensionInspection = function(value) {
   return jspb.Message.setProto3StringField(this, 36, value);
 };
 
 
 /**
- * optional float physicalIndex = 37;
- * @return {number}
- */
-proto.SectionPB.SectionFrontObject.prototype.getPhysicalindex = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 37, 0.0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.SectionPB.SectionFrontObject} returns this
- */
-proto.SectionPB.SectionFrontObject.prototype.setPhysicalindex = function(value) {
-  return jspb.Message.setProto3FloatField(this, 37, value);
-};
-
-
-/**
- * optional string amountOfPlugs = 38;
+ * optional string Inspection_Metode_Type = 37;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getAmountofplugs = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionMetodeType = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 37, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionMetodeType = function(value) {
+  return jspb.Message.setProto3StringField(this, 37, value);
+};
+
+
+/**
+ * optional string Section_Code = 38;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSectionCode = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 38, ""));
 };
 
@@ -4516,16 +4960,16 @@ proto.SectionPB.SectionFrontObject.prototype.getAmountofplugs = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setAmountofplugs = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setSectionCode = function(value) {
   return jspb.Message.setProto3StringField(this, 38, value);
 };
 
 
 /**
- * optional string except = 39;
+ * optional string MedieID = 39;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getExcept = function() {
+proto.SectionPB.SectionFrontObject.prototype.getMedieid = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 39, ""));
 };
 
@@ -4534,16 +4978,16 @@ proto.SectionPB.SectionFrontObject.prototype.getExcept = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setExcept = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setMedieid = function(value) {
   return jspb.Message.setProto3StringField(this, 39, value);
 };
 
 
 /**
- * optional string manholeLateral = 40;
+ * optional string MediaType = 40;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getManholelateral = function() {
+proto.SectionPB.SectionFrontObject.prototype.getMediatype = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 40, ""));
 };
 
@@ -4552,16 +4996,16 @@ proto.SectionPB.SectionFrontObject.prototype.getManholelateral = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setManholelateral = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setMediatype = function(value) {
   return jspb.Message.setProto3StringField(this, 40, value);
 };
 
 
 /**
- * optional string prework = 41;
+ * optional string Inspektion_Damage = 41;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getPrework = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspektionDamage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 41, ""));
 };
 
@@ -4570,16 +5014,16 @@ proto.SectionPB.SectionFrontObject.prototype.getPrework = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setPrework = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspektionDamage = function(value) {
   return jspb.Message.setProto3StringField(this, 41, value);
 };
 
 
 /**
- * optional string milled = 42;
+ * optional string Inspection_Start = 42;
  * @return {string}
  */
-proto.SectionPB.SectionFrontObject.prototype.getMilled = function() {
+proto.SectionPB.SectionFrontObject.prototype.getInspectionStart = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 42, ""));
 };
 
@@ -4588,17 +5032,287 @@ proto.SectionPB.SectionFrontObject.prototype.getMilled = function() {
  * @param {string} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setMilled = function(value) {
+proto.SectionPB.SectionFrontObject.prototype.setInspectionStart = function(value) {
   return jspb.Message.setProto3StringField(this, 42, value);
 };
 
 
 /**
- * optional int32 lateralTypeID = 43;
+ * optional string Physical_Index = 43;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getPhysicalIndex = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 43, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setPhysicalIndex = function(value) {
+  return jspb.Message.setProto3StringField(this, 43, value);
+};
+
+
+/**
+ * optional string DrawingCode = 44;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getDrawingcode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 44, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setDrawingcode = function(value) {
+  return jspb.Message.setProto3StringField(this, 44, value);
+};
+
+
+/**
+ * optional string CrossSection = 45;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getCrosssection = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 45, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setCrosssection = function(value) {
+  return jspb.Message.setProto3StringField(this, 45, value);
+};
+
+
+/**
+ * optional string Profile = 46;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getProfile = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 46, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setProfile = function(value) {
+  return jspb.Message.setProto3StringField(this, 46, value);
+};
+
+
+/**
+ * optional string AddressID = 47;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getAddressid = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 47, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setAddressid = function(value) {
+  return jspb.Message.setProto3StringField(this, 47, value);
+};
+
+
+/**
+ * optional string ToPointAddess = 48;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getTopointaddess = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 48, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setTopointaddess = function(value) {
+  return jspb.Message.setProto3StringField(this, 48, value);
+};
+
+
+/**
+ * optional string SystemName = 49;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSystemname = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 49, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSystemname = function(value) {
+  return jspb.Message.setProto3StringField(this, 49, value);
+};
+
+
+/**
+ * optional string SystemAge = 50;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSystemage = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 50, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSystemage = function(value) {
+  return jspb.Message.setProto3StringField(this, 50, value);
+};
+
+
+/**
+ * optional string SystemDocumentation = 51;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSystemdocumentation = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 51, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSystemdocumentation = function(value) {
+  return jspb.Message.setProto3StringField(this, 51, value);
+};
+
+
+/**
+ * optional string SystemMedia = 52;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSystemmedia = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 52, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSystemmedia = function(value) {
+  return jspb.Message.setProto3StringField(this, 52, value);
+};
+
+
+/**
+ * optional string MaterialeIdentified = 53;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getMaterialeidentified = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 53, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setMaterialeidentified = function(value) {
+  return jspb.Message.setProto3StringField(this, 53, value);
+};
+
+
+/**
+ * optional string Inspection_Stop2 = 54;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionStop2 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 54, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionStop2 = function(value) {
+  return jspb.Message.setProto3StringField(this, 54, value);
+};
+
+
+/**
+ * optional string ReportType = 55;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getReporttype = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 55, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setReporttype = function(value) {
+  return jspb.Message.setProto3StringField(this, 55, value);
+};
+
+
+/**
+ * optional string InspectionSection_Startpoint = 56;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionsectionStartpoint = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 56, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionsectionStartpoint = function(value) {
+  return jspb.Message.setProto3StringField(this, 56, value);
+};
+
+
+/**
+ * optional string InspectionSection_Endpoint = 57;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionsectionEndpoint = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 57, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionsectionEndpoint = function(value) {
+  return jspb.Message.setProto3StringField(this, 57, value);
+};
+
+
+/**
+ * optional float InspectionSection_Distance = 58;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getLateraltypeid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 43, 0));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionsectionDistance = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 58, 0.0));
 };
 
 
@@ -4606,17 +5320,17 @@ proto.SectionPB.SectionFrontObject.prototype.getLateraltypeid = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setLateraltypeid = function(value) {
-  return jspb.Message.setProto3IntField(this, 43, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionsectionDistance = function(value) {
+  return jspb.Message.setProto3FloatField(this, 58, value);
 };
 
 
 /**
- * optional int32 renovationStatusID = 44;
+ * optional int32 InspectionSectioNumber = 59;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getRenovationstatusid = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 44, 0));
+proto.SectionPB.SectionFrontObject.prototype.getInspectionsectionumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 59, 0));
 };
 
 
@@ -4624,17 +5338,71 @@ proto.SectionPB.SectionFrontObject.prototype.getRenovationstatusid = function() 
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setRenovationstatusid = function(value) {
-  return jspb.Message.setProto3IntField(this, 44, value);
+proto.SectionPB.SectionFrontObject.prototype.setInspectionsectionumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 59, value);
 };
 
 
 /**
- * optional int32 postion = 45;
+ * optional string InspectionLateralClockReference = 60;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionlateralclockreference = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 60, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionlateralclockreference = function(value) {
+  return jspb.Message.setProto3StringField(this, 60, value);
+};
+
+
+/**
+ * optional string InspectionLateralClockReference6 = 61;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionlateralclockreference6 = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 61, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionlateralclockreference6 = function(value) {
+  return jspb.Message.setProto3StringField(this, 61, value);
+};
+
+
+/**
+ * optional string ComponentCode = 62;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getComponentcode = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 62, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setComponentcode = function(value) {
+  return jspb.Message.setProto3StringField(this, 62, value);
+};
+
+
+/**
+ * optional float PhysicalIndexValue = 63;
  * @return {number}
  */
-proto.SectionPB.SectionFrontObject.prototype.getPostion = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 45, 0));
+proto.SectionPB.SectionFrontObject.prototype.getPhysicalindexvalue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 63, 0.0));
 };
 
 
@@ -4642,8 +5410,350 @@ proto.SectionPB.SectionFrontObject.prototype.getPostion = function() {
  * @param {number} value
  * @return {!proto.SectionPB.SectionFrontObject} returns this
  */
-proto.SectionPB.SectionFrontObject.prototype.setPostion = function(value) {
-  return jspb.Message.setProto3IntField(this, 45, value);
+proto.SectionPB.SectionFrontObject.prototype.setPhysicalindexvalue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 63, value);
+};
+
+
+/**
+ * optional float Inspection_DamageValue = 64;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getInspectionDamagevalue = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 64, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setInspectionDamagevalue = function(value) {
+  return jspb.Message.setProto3FloatField(this, 64, value);
+};
+
+
+/**
+ * optional int32 AmountOfPlugs = 65;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getAmountofplugs = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 65, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setAmountofplugs = function(value) {
+  return jspb.Message.setProto3IntField(this, 65, value);
+};
+
+
+/**
+ * optional int32 Group = 66;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getGroup = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 66, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3IntField(this, 66, value);
+};
+
+
+/**
+ * optional bool Excluded = 67;
+ * @return {boolean}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getExcluded = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 67, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setExcluded = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 67, value);
+};
+
+
+/**
+ * optional bool ManholeSection = 68;
+ * @return {boolean}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getManholesection = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 68, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setManholesection = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 68, value);
+};
+
+
+/**
+ * optional bool PreparatoryWork = 69;
+ * @return {boolean}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getPreparatorywork = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 69, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setPreparatorywork = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 69, value);
+};
+
+
+/**
+ * optional bool Milled = 70;
+ * @return {boolean}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getMilled = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 70, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setMilled = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 70, value);
+};
+
+
+/**
+ * optional string UserComment = 71;
+ * @return {string}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getUsercomment = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 71, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setUsercomment = function(value) {
+  return jspb.Message.setProto3StringField(this, 71, value);
+};
+
+
+/**
+ * optional int32 Position = 72;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getPosition = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 72, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setPosition = function(value) {
+  return jspb.Message.setProto3IntField(this, 72, value);
+};
+
+
+/**
+ * optional int32 FromManholeID_Orginal = 73;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getFrommanholeidOrginal = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 73, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setFrommanholeidOrginal = function(value) {
+  return jspb.Message.setProto3IntField(this, 73, value);
+};
+
+
+/**
+ * optional int32 ToManholeID_Orginal = 74;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getTomanholeidOrginal = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 74, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setTomanholeidOrginal = function(value) {
+  return jspb.Message.setProto3IntField(this, 74, value);
+};
+
+
+/**
+ * optional int32 RenovationYear = 75;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getRenovationyear = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 75, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setRenovationyear = function(value) {
+  return jspb.Message.setProto3IntField(this, 75, value);
+};
+
+
+/**
+ * optional bool ChooseDeleteRow = 76;
+ * @return {boolean}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getChoosedeleterow = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 76, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setChoosedeleterow = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 76, value);
+};
+
+
+/**
+ * optional int32 SagImportId = 77;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSagimportid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 77, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSagimportid = function(value) {
+  return jspb.Message.setProto3IntField(this, 77, value);
+};
+
+
+/**
+ * optional int32 SectionUUFK = 78;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSectionuufk = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 78, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSectionuufk = function(value) {
+  return jspb.Message.setProto3IntField(this, 78, value);
+};
+
+
+/**
+ * optional int32 StiktypeId = 79;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getStiktypeid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 79, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setStiktypeid = function(value) {
+  return jspb.Message.setProto3IntField(this, 79, value);
+};
+
+
+/**
+ * optional int32 PrioritetId = 80;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getPrioritetid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 80, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setPrioritetid = function(value) {
+  return jspb.Message.setProto3IntField(this, 80, value);
+};
+
+
+/**
+ * optional int32 Renovering_StatusId = 81;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getRenoveringStatusid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 81, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setRenoveringStatusid = function(value) {
+  return jspb.Message.setProto3IntField(this, 81, value);
+};
+
+
+/**
+ * optional int32 SectionEndPointID = 82;
+ * @return {number}
+ */
+proto.SectionPB.SectionFrontObject.prototype.getSectionendpointid = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 82, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.SectionPB.SectionFrontObject} returns this
+ */
+proto.SectionPB.SectionFrontObject.prototype.setSectionendpointid = function(value) {
+  return jspb.Message.setProto3IntField(this, 82, value);
 };
 
 

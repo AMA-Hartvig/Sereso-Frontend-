@@ -70,7 +70,7 @@ class="mat-elevation-z8 mat-table">
 <ng-container matColumnDef="ClientName">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Name</th>
   <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getClientname()}}">{{element.getClientname()}}</td>
+  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
 </ng-container>
 
 <ng-container matColumnDef="Description">
@@ -81,13 +81,13 @@ class="mat-elevation-z8 mat-table">
 
 <ng-container matColumnDef="ClientType">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Type</th>
-  <td mat-cell *matCellDef="let element">{{element.getClienttype()}}</td>
+  <td mat-cell *matCellDef="let element">{{element.getCustomername()}}</td>
 </ng-container>
 
 <ng-container matColumnDef="ImportType">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Import Type</th>
   <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getClientname()}}">{{element.getClientname()}}</td>
+  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
 </ng-container>
 
 <ng-container matColumnDef="Sections">

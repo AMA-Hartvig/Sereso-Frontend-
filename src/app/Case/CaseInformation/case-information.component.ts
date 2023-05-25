@@ -13,11 +13,7 @@ import {  CaseService } from '../../Services/case.service';
 export class CaseInformationComponent implements OnInit {
   frontDatasource = new MatTableDataSource<FrontPageObject>();
 
-
-
-
   @Output() frontCaseObject = new FrontPageObject();
-
 
   subscription = new Array<Subscription>();
 

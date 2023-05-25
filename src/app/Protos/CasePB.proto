@@ -10,7 +10,7 @@ package CasePB;
 service CasePBService{
 rpc GetAllCases (StatusRepley) returns (CaseList);
 rpc GetFrontPageObjects (StatusRepley) returns (FrontpageList);
-
+rpc SelectedFrontPageObject (StatusRepley) returns (FrontPageObject);
 }
 
 //A standard object as seen in Database table "EDW_SAG"
@@ -57,7 +57,7 @@ message CaseList {
 //clientName = EDW_BRUGER.Kundenavn
 //clientType = EDW_Sagtype.SagTypeNavn
 //importType = EDW_ImportType.ImporttypeNavn
-message FrontPageObject{
+message FrontPageObject2{
 	int32 caseNumber = 1;
 	string caseName = 2;
 	string clientName = 3;
@@ -73,6 +73,18 @@ message FrontPageObject{
 	int32 manholesPercentage = 13;
 	int32 total = 14;
   int32 caseID = 15;
+}
+message FrontPageObject{
+	int32 caseId = 1;
+	int32 caseNumber = 2;
+	string caseName = 3;
+	string description = 4;
+	int32 caseImportId = 5;
+  int32 importTypeId = 6;
+	string customerName = 7;
+  string importTypeName = 8;
+  int32 caseTypeId = 9;
+
 }
 message FrontpageList{
 	repeated FrontPageObject fpObjects = 1;

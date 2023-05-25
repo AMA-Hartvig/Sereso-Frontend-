@@ -1,4 +1,3 @@
-
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'rxjs';
@@ -57,6 +56,7 @@ export class CaseInformationSectionComponent implements OnInit {
     private sectionService: SectionService,
     private route: Router
   ) {
+
     // this.sectionService.GetSectionListFromCaseNumber$.subscribe(x => {
     //   this.sectionList = x;
     //   this.sectionDatasource.data = this.sectionList!.getSectionsList();
@@ -72,6 +72,7 @@ export class CaseInformationSectionComponent implements OnInit {
         // this.caseID = this.CaseNumber.getCasenumber()
       }
     });
+    console.log("Casenumber " + this.CaseNumber.getCaseid());
 
 
     this.subscription.push(

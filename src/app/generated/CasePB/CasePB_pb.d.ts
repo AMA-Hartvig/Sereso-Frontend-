@@ -177,7 +177,7 @@ export namespace CaseList {
   }
 }
 
-export class FrontPageObject extends jspb.Message {
+export class FrontPageObject2 extends jspb.Message {
   getCasenumber(): number;
   setCasenumber(value: number): void;
 
@@ -224,16 +224,16 @@ export class FrontPageObject extends jspb.Message {
   setCaseid(value: number): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): FrontPageObject.AsObject;
-  static toObject(includeInstance: boolean, msg: FrontPageObject): FrontPageObject.AsObject;
+  toObject(includeInstance?: boolean): FrontPageObject2.AsObject;
+  static toObject(includeInstance: boolean, msg: FrontPageObject2): FrontPageObject2.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: FrontPageObject, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): FrontPageObject;
-  static deserializeBinaryFromReader(message: FrontPageObject, reader: jspb.BinaryReader): FrontPageObject;
+  static serializeBinaryToWriter(message: FrontPageObject2, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FrontPageObject2;
+  static deserializeBinaryFromReader(message: FrontPageObject2, reader: jspb.BinaryReader): FrontPageObject2;
 }
 
-export namespace FrontPageObject {
+export namespace FrontPageObject2 {
   export type AsObject = {
     casenumber: number,
     casename: string,
@@ -250,6 +250,58 @@ export namespace FrontPageObject {
     manholespercentage: number,
     total: number,
     caseid: number,
+  }
+}
+
+export class FrontPageObject extends jspb.Message {
+  getCaseid(): number;
+  setCaseid(value: number): void;
+
+  getCasenumber(): number;
+  setCasenumber(value: number): void;
+
+  getCasename(): string;
+  setCasename(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getCaseimportid(): number;
+  setCaseimportid(value: number): void;
+
+  getImporttypeid(): number;
+  setImporttypeid(value: number): void;
+
+  getCustomername(): string;
+  setCustomername(value: string): void;
+
+  getImporttypename(): string;
+  setImporttypename(value: string): void;
+
+  getCasetypeid(): number;
+  setCasetypeid(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FrontPageObject.AsObject;
+  static toObject(includeInstance: boolean, msg: FrontPageObject): FrontPageObject.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FrontPageObject, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FrontPageObject;
+  static deserializeBinaryFromReader(message: FrontPageObject, reader: jspb.BinaryReader): FrontPageObject;
+}
+
+export namespace FrontPageObject {
+  export type AsObject = {
+    caseid: number,
+    casenumber: number,
+    casename: string,
+    description: string,
+    caseimportid: number,
+    importtypeid: number,
+    customername: string,
+    importtypename: string,
+    casetypeid: number,
   }
 }
 

@@ -22,10 +22,20 @@ type CasePBServiceGetFrontPageObjects = {
   readonly responseType: typeof src_app_Protos_CasePB_pb.FrontpageList;
 };
 
+type CasePBServiceSelectedFrontPageObject = {
+  readonly methodName: string;
+  readonly service: typeof CasePBService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof src_app_Protos_CasePB_pb.StatusRepley;
+  readonly responseType: typeof src_app_Protos_CasePB_pb.FrontPageObject;
+};
+
 export class CasePBService {
   static readonly serviceName: string;
   static readonly GetAllCases: CasePBServiceGetAllCases;
   static readonly GetFrontPageObjects: CasePBServiceGetFrontPageObjects;
+  static readonly SelectedFrontPageObject: CasePBServiceSelectedFrontPageObject;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -77,6 +87,15 @@ export class CasePBServiceClient {
   getFrontPageObjects(
     requestMessage: src_app_Protos_CasePB_pb.StatusRepley,
     callback: (error: ServiceError|null, responseMessage: src_app_Protos_CasePB_pb.FrontpageList|null) => void
+  ): UnaryResponse;
+  selectedFrontPageObject(
+    requestMessage: src_app_Protos_CasePB_pb.StatusRepley,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_CasePB_pb.FrontPageObject|null) => void
+  ): UnaryResponse;
+  selectedFrontPageObject(
+    requestMessage: src_app_Protos_CasePB_pb.StatusRepley,
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_CasePB_pb.FrontPageObject|null) => void
   ): UnaryResponse;
 }
 

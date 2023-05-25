@@ -28,6 +28,15 @@ CasePBService.GetFrontPageObjects = {
   responseType: src_app_Protos_CasePB_pb.FrontpageList
 };
 
+CasePBService.SelectedFrontPageObject = {
+  methodName: "SelectedFrontPageObject",
+  service: CasePBService,
+  requestStream: false,
+  responseStream: false,
+  requestType: src_app_Protos_CasePB_pb.StatusRepley,
+  responseType: src_app_Protos_CasePB_pb.FrontPageObject
+};
+
 exports.CasePBService = CasePBService;
 
 function CasePBServiceClient(serviceHost, options) {
@@ -71,6 +80,37 @@ CasePBServiceClient.prototype.getFrontPageObjects = function getFrontPageObjects
     callback = arguments[1];
   }
   var client = grpc.unary(CasePBService.GetFrontPageObjects, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+CasePBServiceClient.prototype.selectedFrontPageObject = function selectedFrontPageObject(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(CasePBService.SelectedFrontPageObject, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
