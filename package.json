@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@azure/msal-angular": "^2.5.7",
     "@ngx-grpc/core": "^2.4.0",
     "@ngx-grpc/grpc-web-client": "^2.4.0",
     "@ngx-grpc/improbable-eng-grpc-web-client": "^2.3.0",

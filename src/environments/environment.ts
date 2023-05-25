@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    config: {
+    apiUrl: 'http://localhost:6161', // repalce with amas database
+    graphurl:"http://localhost:4200/Cases",
+    graphurlsignOut:"http://localhost:4200",
+    Graphclientid:"9718ad34-0e44-4aa7-83e3-940e58d67549", // Engii-soft azure id
+    loginFailedRoute:"http://localhost:4200",}
 };
 
 /*

@@ -36,8 +36,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle'
 import { MatBadgeModule } from '@angular/material/badge'
-
-
+import { MsGraphAngularModule } from './ms-graph-angular/ms-graph-angular.module';
+import {ModenLoginComponent} from './ModenLogin/ModenLogin.component'
+import {FancyLoaderComponent  } from './fancy-loader/fancy-loader.component';
 // Angular Materials End
 
 
@@ -74,9 +75,9 @@ import { VisualPresentatorComponent } from './VisualMedia/visual-presentator/vis
     ActionListComponent,
     ActionFiltersComponent,
     ActionAddedComponent,
-    VisualPresentatorComponent
-
-
+    VisualPresentatorComponent,
+    ModenLoginComponent,
+    FancyLoaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +120,7 @@ import { VisualPresentatorComponent } from './VisualMedia/visual-presentator/vis
     MatStepperModule,
     MatRippleModule,
     FlexLayoutModule,
-
+    MsGraphAngularModule,
 
 
   ],

@@ -9,7 +9,7 @@
 <app-case-show-case></app-case-show-case> -->
 
 
-<mat-sidenav-container class="sidenav-container ">
+<mat-sidenav-container *ngIf="LoggedIn | async;else loggedOut"  class="sidenav-container ">
   <mat-sidenav #drawer style="overflow: hidden;" fixedInViewport="true" [attr.role]="'navigation'" [mode]="'side'" [opened]="true">
     <mat-toolbar color="primary" style="margin-top:0px; background-color: #3362a8;"><h2>Sereso</h2></mat-toolbar>
     <mat-nav-list class="removeTopPadding">
@@ -42,7 +42,7 @@
       </mat-list-item>
 
 
-      <mat-list-item class="disabledButtons" routerLink="/hejhenning">
+      <mat-list-item class="disabledButtons" routerLink="/Cases">
         <mat-icon matListIcon>auto_graph</mat-icon>
         <a matLine i18n>Case</a>
       </mat-list-item>

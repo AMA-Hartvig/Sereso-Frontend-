@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MSGraphService } from './Services/msgraph.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  LoggedIn = this.MsalService.logedIn$;
+  constructor(private MsalService:MSGraphService) {
+
+  }
   title = 'Sereso-Frontend';
 }
