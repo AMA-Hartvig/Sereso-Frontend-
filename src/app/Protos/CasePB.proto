@@ -134,4 +134,4 @@ message StatusRepley{
 /*------Start of message lists------*/
 
 
-//protoc --plugin=protoc-gen-ts="C:\Users\ama.HARTVIG\source\repos\Sereso\Sereso-Frontend\Sereso-Frontend\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:src\app\generated" --ts_out="service=grpc-web:src/app/generated" src\app\Protos\CasePB.proto
+//protoc --plugin=protoc-gen-ts="C:\Users\aoo\source\repos\seresoAngularMark2\Sereso-Frontend-\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:src\app\generated" --ts_out="service=grpc-web:src/app/generated" src\app\Protos\CasePB.proto
