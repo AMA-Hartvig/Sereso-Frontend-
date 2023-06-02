@@ -17,9 +17,7 @@ export class MSGraphService {
       clientId: environment.config.Graphclientid,
       authority: "https://login.microsoftonline.com/organizations",
       knownAuthorities: [],
-      // redirectUri: environment.config.graphurl,
       postLogoutRedirectUri: environment.config.loginFailedRoute,
-      // postLogoutRedirectUri: "http://localhost:4200",
       navigateToLoginRequestUrl: false
     },
     cache: {
@@ -71,7 +69,6 @@ export class MSGraphService {
       if (x.username.length > 1)
         resultName = x.username.split("@")[0];
     });
-    // console.log(resultName);
     return resultName;
   };
 
@@ -80,8 +77,6 @@ export class MSGraphService {
     this.msalService.loginPopup().subscribe(x => {
       this.msalInstance.setActiveAccount(x.account);
       this.logedIn$.next(true);
-      // sessionStorage.setItem("User", result.account!.username.split('@')[0])
-      //sessionStorage.setItem("LoginIn", "true");
     });
   };
 
@@ -100,14 +95,11 @@ export class MSGraphService {
 
   public t() {
     this.msalInstance.addEventCallback((event) => {
-      //  console.log(event);
       switch (event.eventType) {
         case EventType.LOGIN_SUCCESS:
           this.logedIn$.next(true);
           break;
         case EventType.LOGIN_FAILURE:
-          // sessionStorage.clear();
-          // this.logedIn$.next(false);
           break;
         case EventType.SSO_SILENT_FAILURE:
           alert("SSO Silent Failure")

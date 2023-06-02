@@ -18,39 +18,19 @@ export class SectionService {
   GetAllSections$ = new BehaviorSubject<SectionList>(new SectionList());
   GetSpecificSection$ = new BehaviorSubject<SectionObject>(new SectionObject());
   GetSectionListFromCaseNumber$ = new BehaviorSubject<SectionInformationList>(new SectionInformationList());
-  // GetAllSectionsFront$ = new BehaviorSubject<SectionFrontList>(new SectionFrontList());
 
   constructor(private httpclient: HttpClient) {
 
 
   }
 
-  // public GetFrontSections(status :StatusRepley){
-
-  //   let requst = new StatusRepley();
-  //   grpc.invoke(SectionPBService.GetAllSectionsFront, {
-  //     request: requst,
-  //     host: this.hostAddress,
-  //     onMessage: (Message: SectionFrontList) => {
-  //       this.GetAllSectionsFront$.next(Message);
-
-  //     },
-  //     onEnd: (res) => {
-
-  //     },
-  //   });
-  // }
-
   public GetSectionList() {
-
     let requst = new StatusRepley();
     grpc.invoke(SectionPBService.GetAllSections, {
       request: requst,
       host: this.hostAddress,
       onMessage: (Message: SectionList) => {
         this.GetAllSections$.next(Message);
-        console.log(Message)
-
       },
       onEnd: (res) => {
 
@@ -66,9 +46,6 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionObject) => {
         this.GetSpecificSection$.next(Message);
-        console.log(Message)
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
       },
       onEnd: (res) => {
 
@@ -85,9 +62,6 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionInformationList) => {
         this.GetSectionListFromCaseNumber$.next(Message);
-        console.log(Message)
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
 
       },
       onEnd: (res) => {

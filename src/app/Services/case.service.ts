@@ -37,9 +37,6 @@ export class CaseService {
       host: this.hostAddress,
       onMessage: (Message: CaseList) => {
         this.GetAllCases$.next(Message);
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-/*         console.log("Got Data" + Message); */
       },
       onEnd: (res) => {
         this.spinner.stopLoading();
@@ -55,9 +52,6 @@ export class CaseService {
       host: this.hostAddress,
       onMessage: (Message: FrontPageObject) => {
         this.SelectedFrontPageObject$.next(Message);
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-/*         console.log("Got Data" + Message); */
       },
       onEnd: (res) => {
         this.spinner.stopLoading();
@@ -73,10 +67,6 @@ export class CaseService {
       host: this.hostAddress,
       onMessage: (Message: FrontpageList) => {
         this.GetFrontPageObjects$.next(Message);
-
-        // new BehaviorSubject<CaseObject>(new CaseList());
-        // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
-  /*       console.log("Got Data" + Message); */
       },
       onEnd: (res) => {
         this.spinner.stopLoading();

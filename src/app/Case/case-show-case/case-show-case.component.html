@@ -1,26 +1,17 @@
 <mat-card>
   <div>
-
     <div fxLayout="row" class="width100P">
-
       <div fxLayout="column" class="width25P">
-
-        <!-- Add functionality to ADD button -->
-        <button  mat-icon-button matTooltipClass="tooltipStyling" matTooltip="Add a new case">
+        <button mat-icon-button matTooltipClass="tooltipStyling" matTooltip="Add a new case">
           <mat-icon>add</mat-icon>
         </button>
-
       </div>
 
       <div fxLayout="column" class="width50P" fxLayoutAlign="center center">
-
         <mat-form-field appearance="outline" class="width100P" style="font-size: smaller;">
           <mat-label style="font-size: large">
             <mat-icon>search</mat-icon>
           </mat-label>
-       <!--    <input matInput
-
-          /> -->
           <input matInput (keyup)="applyFilter($event)" placeholder="Filter/Search" #input />
         </mat-form-field>
 
@@ -32,145 +23,70 @@
   </div>
 </mat-card>
 
+<mat-card>
 
-<!-- <div fxLayout="column" class="width66P" fxLayoutAlign=" center">
+  <table mat-table #caseMatTable id="caseMatTable" [dataSource]="frontDatasource" style="min-width: 100% !important;" matSort
+    class="mat-elevation-z8 mat-table">
 
-  <mat-form-field appearance="outline" class="width80P" style="font-size: smaller;">
-    <mat-label style="font-size: large">
-      <mat-icon>search</mat-icon>
-    </mat-label>
-    <input i18n matTooltipClass="tooltipStyling" matTooltip="Search" matInput (keyup)="applyFilter($event)" [value]="SelecetedFilter.textInput" placeholder="Filter/Search"
-      #input />
-    <button matSuffix matTooltipClass="tooltipStyling" matTooltip="Clear all filters" *ngIf="SelecetedFilter.textInput.length >= 1" (click)="ClearFilter()" mat-icon-button aria-label="Clear">
-      <mat-icon>close</mat-icon>
-    </button>
-    <mat-hint i18n>Search</mat-hint>
-  </mat-form-field>
+    <ng-container matColumnDef="Case Number">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>CaseNumber</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
 
-</div> -->
+    <ng-container matColumnDef="ProjectName">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Project Name</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasename()}}">
+        {{element.getCasename()}}</td>
+    </ng-container>
 
 
-<table mat-table #caseMatTable [dataSource]="frontDatasource" style="min-width: 100% !important;" matSort
-class="mat-elevation-z8 mat-table">
-<ng-container matColumnDef="Case Number">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>CaseNumber</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
+    <ng-container matColumnDef="ClientName">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Name</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
+    <ng-container matColumnDef="Description">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Description</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getDescription()}}">
+        {{element.getDescription()}}</td>
+    </ng-container>
 
-<ng-container matColumnDef="ProjectName">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Project Name</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasename()}}">{{element.getCasename()}}</td>
-</ng-container>
+    <ng-container matColumnDef="ClientType">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Type</th>
+      <td mat-cell *matCellDef="let element">{{element.getCustomername()}}</td>
+    </ng-container>
 
+    <ng-container matColumnDef="ImportType">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Import Type</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
-<ng-container matColumnDef="ClientName">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Name</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
+    <ng-container matColumnDef="Sections">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Sections</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
-<ng-container matColumnDef="Description">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Description</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getDescription()}}">{{element.getDescription()}}</td>
-</ng-container>
+    <ng-container matColumnDef="Laterals">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Laterals</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
-<ng-container matColumnDef="ClientType">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Type</th>
-  <td mat-cell *matCellDef="let element">{{element.getCustomername()}}</td>
-</ng-container>
+    <ng-container matColumnDef="Manholes">
+      <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Manholes</th>
+      <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling" matTooltip="{{element.getCasenumber()}}">
+        {{element.getCasenumber()}}</td>
+    </ng-container>
 
-<ng-container matColumnDef="ImportType">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Import Type</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Sections">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Sections</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Laterals">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Laterals</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Manholes">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Manholes</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
-
-
-<!-- <table mat-table #caseMatTable [dataSource]="caseDatasource" style="min-width: 100% !important;" matSort
-class="mat-elevation-z8 mat-table">
-<ng-container matColumnDef="Case Number">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>CaseNumber</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasenumber()}}">{{element.getCasenumber()}}</td>
-</ng-container>
-<label></label>
-
-
-<ng-container matColumnDef="ProjectName">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Project Name</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasename()}}">{{element.getCasename()}}</td>
-</ng-container>
-
-
-<ng-container matColumnDef="ClientName">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Name</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getPriceyear()}}">{{element.getPriceyear()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Description">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Description</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getDescription()}}">{{element.getDescription()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="ClientType">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Client Type</th>
-  <td mat-cell *matCellDef="let element">{{element.getCreationdate()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="ImportType">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Import Type</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasetypeid()}}">{{element.getCasetypeid()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Sections">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Sections</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasename()}}">{{element.getCasename()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Laterals">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Laterals</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasename()}}">{{element.getCasename()}}</td>
-</ng-container>
-
-<ng-container matColumnDef="Manholes">
-  <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Manholes</th>
-  <td mat-cell *matCellDef="let element" matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getCasename()}}">{{element.getCasename()}}</td>
-</ng-container> -->
-
-<tr mat-header-row *matHeaderRowDef="displayedColumnsForFrontPageCase"></tr>
-<tr mat-row style="text-align: match-parrent !important;" (click)="GetCaseDetails(row)"  *matRowDef="let row; columns: displayedColumnsForFrontPageCase;"
-
-></tr>
-<mat-paginator #paginator showFirstLastButtons aria-label="antal at vise" [pageSizeOptions]="[100,500]">
-</mat-paginator>
-</table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumnsForFrontPageCase"></tr>
+    <tr mat-row style="text-align: match-parrent !important;" (click)="GetCaseDetails(row)"
+      *matRowDef="let row; columns: displayedColumnsForFrontPageCase;"></tr>
+    </table>
+    <mat-paginator showFirstLastButtons aria-label="Amount to Show" [pageSizeOptions]="[50,100,500]">
+    </mat-paginator>
+</mat-card>

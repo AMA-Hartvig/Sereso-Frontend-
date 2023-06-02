@@ -14,7 +14,8 @@ export class SectionInformationComponent implements OnInit {
 
   formgroup = new FormGroup({
     getSectionCode: new FormControl(0),
-  getFrom: new FormControl(0) });
+    getFrom: new FormControl(0)
+  });
 
   constructor(
     private sectionService: SectionService,
@@ -22,14 +23,10 @@ export class SectionInformationComponent implements OnInit {
   ) {
     this.sectionService.GetSpecificSection$.subscribe(x => {
       this.sectionObject = x;
+      console.log(x);
       this.formgroup.get('getSectionCode')!.setValue(x.getInspectionSectionnumber());
       this.formgroup.get('getFrom')!.setValue(x.getFrom());
     });
   }
-  // testValue(sectionObject: SectionObject) {
-  //   console.log(sectionObject);
-  //   return sectionObject.getSectionnumber();
-  // }
-
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }

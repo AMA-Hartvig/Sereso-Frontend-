@@ -48,17 +48,13 @@
       CaseID:
     </mat-label>
 <mat-form-field appearance="outline">
-  <input formControlName="getSectionCode" placeholder="test" [value]="formgroup.get('getSectionCode')!.value" matInput />
+  <input formControlName="getSectionCode" placeholder="test" [value]="sectionObject.getDrawingcode()" matInput />
 
 </mat-form-field>
-
     <mat-label i18n>
       From:
     </mat-label>
-    <!-- <input matInput class="sectionText" [value]="sectionObject.getFrom()" /> -->
     <input formControlName="getFrom"  matInput />
-
-
     <mat-label i18n>
       To:
     </mat-label>
