@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { SectionObject } from 'src/app/generated/Sections/SectionPB_pb';
 import { SectionService } from 'src/app/Services/section.service';
@@ -9,24 +10,26 @@ import { SectionService } from 'src/app/Services/section.service';
   styleUrls: ['./section-information.component.css']
 })
 export class SectionInformationComponent implements OnInit {
+  sectionObject: SectionObject = new SectionObject();
 
-  //@Input("SectionObject") SectionObject:SectionObject = this.sectionService.GetSpecificSection$.value
-  /*
-  @Input() SectionFrontObject = this.sectionService.GetSpecificSection$.value */
+  formgroup = new FormGroup({
+    getSectionCode: new FormControl(0),
+  getFrom: new FormControl(0) });
 
-    sectionDatasource = new MatTableDataSource<SectionObject>();
-    sectionObject:SectionObject = new SectionObject();
-  constructor(private sectionService: SectionService) {
+  constructor(
+    private sectionService: SectionService,
+    private _formBuilder: FormBuilder
+  ) {
     this.sectionService.GetSpecificSection$.subscribe(x => {
       this.sectionObject = x;
-      console.log(x)
-      this.sectionDatasource.data.push(this.sectionObject);
-    })
-
-   }
-
-
-  ngOnInit(): void {
+      this.formgroup.get('getSectionCode')!.setValue(x.getInspectionSectionnumber());
+      this.formgroup.get('getFrom')!.setValue(x.getFrom());
+    });
   }
+  // testValue(sectionObject: SectionObject) {
+  //   console.log(sectionObject);
+  //   return sectionObject.getSectionnumber();
+  // }
 
+  ngOnInit(): void {}
 }

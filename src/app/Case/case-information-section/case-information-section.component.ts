@@ -133,8 +133,9 @@ export class CaseInformationSectionComponent implements OnInit {
 
   GetCaseDetails(item: SectionObject) {
     this.sectionService.GetSpecificSection$.next(item);
-    // this.sectionService.GetSectionListFromCaseNumber(item.getSagimportid());
-
+    console.log(item)
+    /* this.sectionService.GetSectionListFromCaseNumber(item.getSagimportid()); */
+    this.sectionService.GetSpecificSection(this.CaseNumber.getCaseid())
     this.route.navigateByUrl('section-detail');
   }
 

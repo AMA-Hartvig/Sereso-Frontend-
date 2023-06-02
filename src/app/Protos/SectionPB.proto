@@ -98,24 +98,8 @@ message SectionObject{
       int32 PrioritetId = 80;
       int32 Renovering_StatusId = 81;
       int32 SectionEndPointID = 82;
-
-
 }
-message SectionFrontObject2{
-	int32 SectionId = 1;
-	int32 from = 2;
-	int32 to = 3;
-	int32 sectionNumber = 4;
-	string dimension = 5;
-	string material = 6;
-	float length = 7;
-	string type = 8;
-	string status = 9;
-	float damage = 10;
-	string physicalIndex = 11;
-	int32 priority = 12;
-	string sectionType = 13;
-}
+
 message SectionInformationObject{
 	int32 from = 1;
 	int32 to = 2;
@@ -130,6 +114,7 @@ message SectionInformationObject{
 	int32 priority = 11;
 	bool excluded = 12;
 	string system = 13;
+    int32 sectionId = 14;
 }
 
 message SectionFrontObject{
@@ -224,9 +209,6 @@ message SectionList {
 message SectionInformationList {
   repeated SectionInformationObject InfoSections = 1;
 }
-
-
-
 
 
 message SectionFrontList {

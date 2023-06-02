@@ -58,9 +58,9 @@ export class SectionService {
     });
   }
 
-  public GetSpecificSection(status :StatusRepley) {
-    this.GetSpecificSection$.next(new SectionObject());
+  public GetSpecificSection(status : number) {
     let requst = new StatusRepley();
+    requst.setCommand(status);
     grpc.invoke(SectionPBService.GetSpecificSection, {
       request: requst,
       host: this.hostAddress,
