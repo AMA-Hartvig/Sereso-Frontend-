@@ -34,7 +34,7 @@ SectionPBService.GetSectionListFromCaseNumber = {
   requestStream: false,
   responseStream: false,
   requestType: src_app_Protos_SectionPB_pb.StatusRepley,
-  responseType: src_app_Protos_SectionPB_pb.SectionList
+  responseType: src_app_Protos_SectionPB_pb.SectionInformationList
 };
 
 SectionPBService.GetSpecificSectionFront = {

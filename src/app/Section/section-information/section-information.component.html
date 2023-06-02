@@ -48,32 +48,32 @@
       CaseID:
     </mat-label>
 
-    <input matInput class="sectionText" [value]="SectionObject.getSectionCode()" />
+    <input matInput class="sectionText" [value]="sectionObject.getSectionid()" />
 
     <mat-label i18n>
       From:
     </mat-label>
-    <input matInput class="sectionText" [value]="SectionObject.getFrom()" />
+    <input matInput class="sectionText" [value]="sectionObject.getFrom()" />
 
     <mat-label i18n>
       To:
     </mat-label>
-    <input matInput class="sectionText" [value]="SectionObject.getTo()" />
+    <input matInput class="sectionText" [value]="sectionObject.getTo()" />
 
     <mat-label i18n>
       Status:
     </mat-label>
-    <input matInput class="sectionText" [value]="SectionObject.getStatus()" />
+    <input matInput class="sectionText" [value]="sectionObject.getStatus()" />
 
     <mat-label i18n>
       Priority:
     </mat-label>
-    <input matInput class="sectionText" [value]="SectionObject.getPrioritetid()" />
+    <input matInput class="sectionText" [value]="sectionObject.getPrioritetid()" />
 
     <mat-label i18n>
       Priority:
     </mat-label>
-    <input matInput class="sectionText" [value]="SectionObject.getReporttype()" />
+    <input matInput class="sectionText" [value]="sectionObject.getReporttype()" />
   </div>
 </mat-card>
 
@@ -89,7 +89,7 @@
       <input
         matInput
         class="sectionText2"
-        [value]="SectionObject.getInspektionReportnumber()"
+        [value]="sectionObject.getInspektionReportnumber()"
       />
     </mat-form-field>
 
@@ -102,7 +102,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getDimension()"
+        [value]="sectionObject.getDimension()"
       />
     </mat-form-field>
 
@@ -112,7 +112,7 @@
       style="width:10%;"
     >
       <mat-label i18n>BST</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getSectionCode()" />
+      <input matInput class="sectionText" [value]="sectionObject.getSectionCode()" />
     </mat-form-field>
 
     <mat-form-field
@@ -124,7 +124,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getMateriale()"
+        [value]="sectionObject.getMateriale()"
       />
     </mat-form-field>
 
@@ -134,7 +134,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Length</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getLengthMeter()" />
+      <input matInput class="sectionText" [value]="sectionObject.getLengthMeter()" />
     </mat-form-field>
 
     <mat-form-field
@@ -146,7 +146,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getPhysicalIndex()"
+        [value]="sectionObject.getPhysicalIndex()"
       />
     </mat-form-field>
 
@@ -156,7 +156,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Damage</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getInspektionDamage()" />
+      <input matInput class="sectionText" [value]="sectionObject.getInspektionDamage()" />
     </mat-form-field>
     <mat-form-field
       appearance="fill"
@@ -167,7 +167,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getInspectionlateralclockreference()"
+        [value]="sectionObject.getInspectionlateralclockreference()"
       />
     </mat-form-field>
   </div>
@@ -182,7 +182,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getInspectionDirection()"
+        [value]="sectionObject.getInspectionDirection()"
       />
     </mat-form-field>
 
@@ -192,7 +192,7 @@
       style="width:10%;"
     >
       <mat-label i18n>System Type</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getSystemage()" />
+      <input matInput class="sectionText" [value]="sectionObject.getSystemage()" />
     </mat-form-field>
 
     <mat-form-field
@@ -204,7 +204,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getAddressid()"
+        [value]="sectionObject.getAddressid()"
       />
     </mat-form-field>
 
@@ -217,7 +217,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getTvOperator()"
+        [value]="sectionObject.getTvOperator()"
       />
     </mat-form-field>
 
@@ -227,7 +227,7 @@
       style="width:10%;"
     >
       <mat-label i18n>In use</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getDimension()" />
+      <input matInput class="sectionText" [value]="sectionObject.getDimension()" />
     </mat-form-field>
 
     <mat-form-field
@@ -239,7 +239,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getInspectionWeather()"
+        [value]="sectionObject.getInspectionWeather()"
       />
     </mat-form-field>
 
@@ -249,7 +249,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Date</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getInspectionDate()" />
+      <input matInput class="sectionText" [value]="sectionObject.getInspectionDate()" />
     </mat-form-field>
 
     <mat-form-field
@@ -258,7 +258,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Rehab</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getAmountofplugs()" />
+      <input matInput class="sectionText" [value]="sectionObject.getAmountofplugs()" />
     </mat-form-field>
   </div>
 
@@ -272,7 +272,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getReportDescription()"
+        [value]="sectionObject.getReportDescription()"
       />
     </mat-form-field>
 
@@ -285,7 +285,7 @@
       <input
         matInput
         class="sectionText"
-        [value]="SectionObject.getAssignmentNumber()"
+        [value]="sectionObject.getAssignmentNumber()"
       />
     </mat-form-field>
     <mat-form-field
@@ -294,7 +294,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Milled</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getMilled()" />
+      <input matInput class="sectionText" [value]="sectionObject.getMilled()" />
     </mat-form-field>
     <mat-form-field
       appearance="fill"
@@ -302,7 +302,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Exclude</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getExcluded()" />
+      <input matInput class="sectionText" [value]="sectionObject.getExcluded()" />
     </mat-form-field>
 
     <mat-form-field
@@ -311,7 +311,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Description</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getAmountofplugs()" />
+      <input matInput class="sectionText" [value]="sectionObject.getAmountofplugs()" />
     </mat-form-field>
 
     <mat-form-field
@@ -320,7 +320,7 @@
       style="width:10%;"
     >
       <mat-label i18n>Description</mat-label>
-      <input matInput class="sectionText" [value]="SectionObject.getChoosedeleterow()" />
+      <input matInput class="sectionText" [value]="sectionObject.getChoosedeleterow()" />
     </mat-form-field>
 
     <mat-form-field
@@ -332,7 +332,7 @@
       <input
         matInput
         class="positionText"
-        [value]="SectionObject.getPosition()"
+        [value]="sectionObject.getPosition()"
       />
     </mat-form-field>
 

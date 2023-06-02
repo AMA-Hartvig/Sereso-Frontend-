@@ -28,7 +28,7 @@ type SectionPBServiceGetSectionListFromCaseNumber = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof src_app_Protos_SectionPB_pb.StatusRepley;
-  readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionList;
+  readonly responseType: typeof src_app_Protos_SectionPB_pb.SectionInformationList;
 };
 
 type SectionPBServiceGetSpecificSectionFront = {
@@ -121,11 +121,11 @@ export class SectionPBServiceClient {
   getSectionListFromCaseNumber(
     requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionList|null) => void
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionInformationList|null) => void
   ): UnaryResponse;
   getSectionListFromCaseNumber(
     requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,
-    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionList|null) => void
+    callback: (error: ServiceError|null, responseMessage: src_app_Protos_SectionPB_pb.SectionInformationList|null) => void
   ): UnaryResponse;
   getSpecificSectionFront(
     requestMessage: src_app_Protos_SectionPB_pb.StatusRepley,

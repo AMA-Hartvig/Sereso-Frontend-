@@ -10,14 +10,18 @@ import { SectionService } from 'src/app/Services/section.service';
 })
 export class SectionInformationComponent implements OnInit {
 
-  @Input() SectionObject = this.sectionService.GetSpecificSection$.value
+  //@Input("SectionObject") SectionObject:SectionObject = this.sectionService.GetSpecificSection$.value
   /*
   @Input() SectionFrontObject = this.sectionService.GetSpecificSection$.value */
 
     sectionDatasource = new MatTableDataSource<SectionObject>();
-
+    sectionObject:SectionObject = new SectionObject();
   constructor(private sectionService: SectionService) {
-    this.sectionDatasource.data.push(this.SectionObject);
+    this.sectionService.GetSpecificSection$.subscribe(x => {
+      this.sectionObject = x;
+      console.log(x)
+      this.sectionDatasource.data.push(this.sectionObject);
+    })
 
    }
 

@@ -8,6 +8,8 @@ import {
   StatusRepley,
   SectionList,
   SectionObject,
+  SectionInformationObject,
+  SectionInformationList,
 } from 'src/app/generated/Sections/SectionPB_pb';
 import { CDK_ROW_TEMPLATE } from '@angular/cdk/table';
 import { Router } from '@angular/router';
@@ -34,19 +36,23 @@ export class CaseInformationSectionComponent implements OnInit {
   ];
 
   @Input() CaseNumber = this.caseService.SelectedFrontPageObject$.value;
+  @Input() sectionId = this.sectionService.GetSectionListFromCaseNumber$.value;
+
   sectionObject?: SectionObject;
-  sectionList?: SectionList;
+
+  sectionInformationObject?: SectionInformationObject;
+  sectionList?: SectionInformationList;
   /*   sectionDatasource = new MatTableDataSource<SectionObject>(
     new Array<SectionObject>()
   ); */
 
-  sectionDatasource = new MatTableDataSource<SectionObject>();
+  sectionDatasource = new MatTableDataSource<SectionInformationObject>();
 
   caseID!: number;
   statusRepley = new StatusRepley();
 
-  sectionResultSet = new Array<SectionObject>();
-  caseResultSet = new Array<SectionObject>();
+  sectionResultSet = new Array<SectionInformationObject>();
+  caseResultSet = new Array<SectionInformationObject>();
 
   subscription = new Array<Subscription>();
   caseDetailsDatasource = new MatTableDataSource<FrontPageObject>();
@@ -77,12 +83,14 @@ export class CaseInformationSectionComponent implements OnInit {
 
     this.subscription.push(
       this.sectionService.GetSectionListFromCaseNumber$.subscribe(y => {
-        this.sectionResultSet = y.getSectionsList();
+        this.sectionResultSet = y.getInfosectionsList();
 
         if (this.CaseNumber.getCasenumber() != 0) {
             this.sectionList = y;
+
+            // y.getInfosectionsList()[0].getPriority
         }
-        this.sectionDatasource.data = this.sectionList!.getSectionsList();
+        this.sectionDatasource.data = this.sectionList!.getInfosectionsList();
 
         this.caseResultSet.forEach(element => {
           this.sectionDatasource.data.push(element)
@@ -95,6 +103,7 @@ export class CaseInformationSectionComponent implements OnInit {
       // = this.sectionList!.getSectionsList();
       })
     );
+
 
 /*     this.statusRepley.setCommand(this.caseID)
     this.sectionService.GetSectionListFromCaseNumber(this.statusRepley.getCommand())
@@ -124,6 +133,8 @@ export class CaseInformationSectionComponent implements OnInit {
 
   GetCaseDetails(item: SectionObject) {
     this.sectionService.GetSpecificSection$.next(item);
+    // this.sectionService.GetSectionListFromCaseNumber(item.getSagimportid());
+
     this.route.navigateByUrl('section-detail');
   }
 

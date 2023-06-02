@@ -7,7 +7,8 @@ package SectionPB;
 service SectionPBService{
 rpc GetAllSections (StatusRepley) returns (SectionList);
 rpc GetSpecificSection (StatusRepley) returns (SectionObject);
-rpc GetSectionListFromCaseNumber (StatusRepley) returns (SectionList);
+rpc GetSectionListFromCaseNumber (StatusRepley) returns (SectionInformationList);
+
 rpc GetSpecificSectionFront (StatusRepley) returns (SectionFrontObject);
 rpc GetSectionFrontListFromCaseNumber (StatusRepley) returns (SectionFrontList);
 rpc GetAllSectionsFront(StatusRepley) returns (SectionFrontList);
@@ -111,10 +112,26 @@ message SectionFrontObject2{
 	string type = 8;
 	string status = 9;
 	float damage = 10;
-	float physicalIndex = 11;
+	string physicalIndex = 11;
 	int32 priority = 12;
 	string sectionType = 13;
 }
+message SectionInformationObject{
+	int32 from = 1;
+	int32 to = 2;
+	int32 sectionNumber = 3;
+	string status = 4;
+	string dimension = 5;
+	float length = 6;
+	string material = 7;
+	string type = 8;
+	string physicalIndex = 9;
+	string damage = 10;
+	int32 priority = 11;
+	bool excluded = 12;
+	string system = 13;
+}
+
 message SectionFrontObject{
 	int32 SectionId = 1;
 	int32 from = 2;
@@ -204,6 +221,10 @@ message SectionFrontObject{
 message SectionList {
   repeated SectionObject sections = 1;
 }
+message SectionInformationList {
+  repeated SectionInformationObject InfoSections = 1;
+}
+
 
 
 

@@ -32,7 +32,7 @@ const msalConfig = {
         }
         switch (level) {
           case LogLevel.Error:
-            console.error(message);
+            /* console.error(message); */
             return;
           // case LogLevel.Info:
           //   console.info(message);

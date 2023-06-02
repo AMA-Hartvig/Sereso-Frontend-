@@ -60,7 +60,7 @@ export class MSGraphService {
   };
 
   tokenTest = "";
-  logedIn$ = new BehaviorSubject<boolean>(false);
+  logedIn$ = new BehaviorSubject<boolean>(true);
   public msalInstance = new PublicClientApplication(this.msalConfig);
   constructor(private spinner: LoadingService, private msalService: MsalService, private route: Router, private httpClient: HttpClient) {
   };

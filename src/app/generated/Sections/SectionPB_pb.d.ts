@@ -378,8 +378,8 @@ export class SectionFrontObject2 extends jspb.Message {
   getDamage(): number;
   setDamage(value: number): void;
 
-  getPhysicalindex(): number;
-  setPhysicalindex(value: number): void;
+  getPhysicalindex(): string;
+  setPhysicalindex(value: string): void;
 
   getPriority(): number;
   setPriority(value: number): void;
@@ -409,9 +409,77 @@ export namespace SectionFrontObject2 {
     type: string,
     status: string,
     damage: number,
-    physicalindex: number,
+    physicalindex: string,
     priority: number,
     sectiontype: string,
+  }
+}
+
+export class SectionInformationObject extends jspb.Message {
+  getFrom(): number;
+  setFrom(value: number): void;
+
+  getTo(): number;
+  setTo(value: number): void;
+
+  getSectionnumber(): number;
+  setSectionnumber(value: number): void;
+
+  getStatus(): string;
+  setStatus(value: string): void;
+
+  getDimension(): string;
+  setDimension(value: string): void;
+
+  getLength(): number;
+  setLength(value: number): void;
+
+  getMaterial(): string;
+  setMaterial(value: string): void;
+
+  getType(): string;
+  setType(value: string): void;
+
+  getPhysicalindex(): string;
+  setPhysicalindex(value: string): void;
+
+  getDamage(): string;
+  setDamage(value: string): void;
+
+  getPriority(): number;
+  setPriority(value: number): void;
+
+  getExcluded(): boolean;
+  setExcluded(value: boolean): void;
+
+  getSystem(): string;
+  setSystem(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SectionInformationObject.AsObject;
+  static toObject(includeInstance: boolean, msg: SectionInformationObject): SectionInformationObject.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SectionInformationObject, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SectionInformationObject;
+  static deserializeBinaryFromReader(message: SectionInformationObject, reader: jspb.BinaryReader): SectionInformationObject;
+}
+
+export namespace SectionInformationObject {
+  export type AsObject = {
+    from: number,
+    to: number,
+    sectionnumber: number,
+    status: string,
+    dimension: string,
+    length: number,
+    material: string,
+    type: string,
+    physicalindex: string,
+    damage: string,
+    priority: number,
+    excluded: boolean,
+    system: string,
   }
 }
 
@@ -778,6 +846,28 @@ export class SectionList extends jspb.Message {
 export namespace SectionList {
   export type AsObject = {
     sectionsList: Array<SectionObject.AsObject>,
+  }
+}
+
+export class SectionInformationList extends jspb.Message {
+  clearInfosectionsList(): void;
+  getInfosectionsList(): Array<SectionInformationObject>;
+  setInfosectionsList(value: Array<SectionInformationObject>): void;
+  addInfosections(value?: SectionInformationObject, index?: number): SectionInformationObject;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SectionInformationList.AsObject;
+  static toObject(includeInstance: boolean, msg: SectionInformationList): SectionInformationList.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SectionInformationList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SectionInformationList;
+  static deserializeBinaryFromReader(message: SectionInformationList, reader: jspb.BinaryReader): SectionInformationList;
+}
+
+export namespace SectionInformationList {
+  export type AsObject = {
+    infosectionsList: Array<SectionInformationObject.AsObject>,
   }
 }
 

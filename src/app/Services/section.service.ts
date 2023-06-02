@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {environment} from '../Environment/Environment'
-import {SectionObject, SectionList, StatusRepley} from '../generated/Sections/SectionPB_pb'
+import {SectionObject, SectionList, StatusRepley, SectionInformationList} from '../generated/Sections/SectionPB_pb'
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
 import { grpc } from '@improbable-eng/grpc-web';
@@ -17,7 +17,7 @@ export class SectionService {
 
   GetAllSections$ = new BehaviorSubject<SectionList>(new SectionList());
   GetSpecificSection$ = new BehaviorSubject<SectionObject>(new SectionObject());
-  GetSectionListFromCaseNumber$ = new BehaviorSubject<SectionList>(new SectionList());
+  GetSectionListFromCaseNumber$ = new BehaviorSubject<SectionInformationList>(new SectionInformationList());
   // GetAllSectionsFront$ = new BehaviorSubject<SectionFrontList>(new SectionFrontList());
 
   constructor(private httpclient: HttpClient) {
@@ -49,6 +49,7 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionList) => {
         this.GetAllSections$.next(Message);
+        console.log(Message)
 
       },
       onEnd: (res) => {
@@ -65,6 +66,7 @@ export class SectionService {
       host: this.hostAddress,
       onMessage: (Message: SectionObject) => {
         this.GetSpecificSection$.next(Message);
+        console.log(Message)
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
       },
@@ -76,13 +78,14 @@ export class SectionService {
 
   public GetSectionListFromCaseNumber(status :number) {
     let requst = new StatusRepley();
+    console.log(status)
     requst.setCommand(status);
     grpc.invoke(SectionPBService.GetSectionListFromCaseNumber, {
       request: requst,
       host: this.hostAddress,
-      onMessage: (Message: SectionList) => {
+      onMessage: (Message: SectionInformationList) => {
         this.GetSectionListFromCaseNumber$.next(Message);
-
+        console.log(Message)
         // new BehaviorSubject<CaseObject>(new CaseList());
         // this.PickedCustomoer$.next(Message.getCustomerlistList()[0])
 

@@ -49,7 +49,7 @@
   <ng-container matColumnDef="From">
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>From</th>
     <td mat-cell *matCellDef="let element"
-    (click)="GetCaseDetails(element)"
+
      matTooltipClass="tooltipStyling"
     matTooltip="{{element.getFrom()}}">{{element.getFrom()}}</td>
   </ng-container>
@@ -78,21 +78,21 @@
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Length</th>
     <td mat-cell *matCellDef="let element"
      matTooltipClass="tooltipStyling"
-    matTooltip="{{element.getLengthMeter()}}">{{element.getLengthMeter()}}</td>
+    matTooltip="{{element.getLength()}}">{{element.getLength()}}</td>
   </ng-container>
 
   <ng-container matColumnDef="Material">
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Material</th>
     <td mat-cell *matCellDef="let element"
      matTooltipClass="tooltipStyling"
-    matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+    matTooltip="{{element.getMaterial()}}">{{element.getMaterial()}}</td>
   </ng-container>
 
   <ng-container matColumnDef="Type">
     <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Type</th>
     <td mat-cell *matCellDef="let element"
      matTooltipClass="tooltipStyling"
-    matTooltip="{{element.getReporttype()}}">{{element.getReporttype()}}</td>
+    matTooltip="{{element.getType()}}">{{element.getType()}}</td>
   </ng-container>
 
 <!-- displayedColumnsForCaseDetails = ['From', 'To', 'Status', 'DIM', 'Length', 'Material', 'Type', 'Lat', 'FI' , 'DAM', 'Priority', 'Section Type']; -->
@@ -100,37 +100,37 @@
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Lat</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+  matTooltip="{{element.getMaterial()}}">{{element.getMaterial()}}</td>
 </ng-container>
 <ng-container matColumnDef="FI">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>FI</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+  matTooltip="{{element.getPhysicalindex()}}">{{element.getPhysicalindex()}}</td>
 </ng-container>
 <ng-container matColumnDef="DAM">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>DAM</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+  matTooltip="{{element.getDamage()}}">{{element.getDamage()}}</td>
 </ng-container>
 <ng-container matColumnDef="Priority">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Priority</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+  matTooltip="{{element.getPriority()}}">{{element.getPriority()}}</td>
 </ng-container>
 <ng-container matColumnDef="Section Type">
   <th mat-header-cell mat-sort-header *matHeaderCellDef i18n>Section Type</th>
   <td mat-cell *matCellDef="let element"
    matTooltipClass="tooltipStyling"
-  matTooltip="{{element.getMateriale()}}">{{element.getMateriale()}}</td>
+  matTooltip="{{element.getMaterial()}}">{{element.getMaterial()}}</td>
 </ng-container>
 
 
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumnsForCaseDetails"></tr>
-<tr mat-row style="text-align: match-parrent !important;" *matRowDef="let row; columns: displayedColumnsForCaseDetails;"
+  <tr mat-header-row  *matHeaderRowDef="displayedColumnsForCaseDetails"></tr>
+<tr mat-row style="text-align: match-parrent !important;" (click)="GetCaseDetails(row)" *matRowDef="let row; columns: displayedColumnsForCaseDetails;"
 
 >
 </tr>
@@ -141,7 +141,7 @@
 <mat-label i18n>
   System Type:
 </mat-label>
-<input matInput [disabled]="true" [value]="CaseNumber.getCasename()">
+<input matInput [disabled]="true" [value]="CaseNumber.getCasenumber()">
 
 
 
